@@ -1,0 +1,58 @@
+.header {
+  max-width: 1200px; /* szerokość jak reszta sekcji */
+  margin: 0 auto;     /* wyśrodkowanie na stronie */
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #4f46e5, #06b6d4); /* gradient tylko w headerze */
+  color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-radius: 12px; /* opcjonalnie zaokrąglone rogi */
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav a {
+  position: relative;
+  margin-left: 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.2); /* półprzezroczyste tło */
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Glow pulsujący na hover */
+.nav a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px #4f46e5, 0 0 20px #06b6d4, 0 0 30px #4f46e5;
+  animation: pulseGlow 1.5s infinite;
+}
+
+/* Animacja delikatnego pulsowania glow */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px #4f46e5, 0 0 20px #06b6d4, 0 0 30px #4f46e5;
+  }
+  50% {
+    box-shadow: 0 0 20px #06b6d4, 0 0 30px #4f46e5, 0 0 40px #06b6d4;
+  }
+  100% {
+    box-shadow: 0 0 10px #4f46e5, 0 0 20px #06b6d4, 0 0 30px #4f46e5;
+  }
+}
+
+
+
+
+
+

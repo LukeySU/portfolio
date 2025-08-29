@@ -1,0 +1,92 @@
+.contact {
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #eef2ff, #f0fdfa);
+  text-align: center;
+}
+
+.contact h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #1e293b;
+}
+
+.contact p, .contact a {
+  font-size: 1.1rem;
+  color: #475569;
+  margin: 0.5rem 0;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.05); /* lekko półprzezroczyste tło */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+}
+
+/* Glow pulsujący na hover */
+.contact p:hover, .contact a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px #4f46e5, 0 0 20px #06b6d4, 0 0 30px #4f46e5;
+  animation: pulseGlow 1.5s infinite;
+}
+
+.contact-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.contact-card {
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  width: 250px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideFadeIn 0.6s forwards;
+}
+
+.contact-card:nth-child(1) { animation-delay: 0s; }
+.contact-card:nth-child(2) { animation-delay: 0.2s; }
+.contact-card:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes slideFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  font-size: 1.05rem;
+  color: #475569;
+  margin: 0.5rem 0;
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+  color: #3b82f6;
+  margin-right: 0.5rem;
+}
+
+/* responsywność */
+@media (max-width: 768px) {
+  .contact-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+
+
+
+
