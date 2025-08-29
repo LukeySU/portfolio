@@ -1,5 +1,5 @@
 .header {
-  max-width: 1200px; /* szerokość jak reszta sekcji */
+  max-width: 1200px; 
   margin: 0 auto;
   padding: 1rem 2rem;
   display: flex;
@@ -22,15 +22,15 @@
 .nav {
   display: flex;
   gap: 0.5rem;
-  flex-wrap: wrap; /* pozwala przyciskom zawijać się, gdy brak miejsca */
-  justify-content: flex-end; /* przyciski po prawej */
+  flex-wrap: wrap; 
+  justify-content: flex-end; 
 }
 
 .nav a {
   position: relative;
   color: #fff;
   text-decoration: none;
-  padding: 0.5rem 0.8rem; /* nieco mniejszy padding na mobilnych */
+  padding: 0.5rem 0.8rem; 
   border-radius: 12px;
   background: rgba(0,0,0,0.2);
   overflow: hidden;
@@ -55,10 +55,10 @@
   }
 }
 
-/* Minimalne dostosowanie na urządzenia mobilne */
+
 @media (max-width: 480px) {
   .nav a {
-    padding: 0.4rem 0.6rem; /* mniejszy padding, żeby zmieścić w header */
+    padding: 0.4rem 0.6rem; 
     font-size: 0.9rem;
   }
 }
