@@ -49,7 +49,9 @@
 
 .hero-image img {
   width: 180px; 
-  border-radius: 50%;
+  border-radius: 37%;
+  border-style:double;
+  border-color:antiquewhite;
   object-fit: cover;
 }
 
