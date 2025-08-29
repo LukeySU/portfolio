@@ -10,15 +10,15 @@
   color: #1e293b;
 }
 
-/* Kontener kart kontaktowych */
+
 .contact-cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* wyśrodkowanie kart */
+  justify-content: center; 
   gap: 2rem;
 }
 
-/* Pojedyncza karta */
+
 .contact-card {
   background: white;
   padding: 1.5rem 2rem;
@@ -46,11 +46,11 @@
   box-shadow: 0 12px 25px rgba(0,0,0,0.1);
 }
 
-/* Element w karcie */
+
 .contact-item {
   display: flex;
   align-items: center;
-  justify-content: center; /* wyśrodkowanie ikony i tekstu w karcie */
+  justify-content: center; 
   font-size: 1.05rem;
   color: #475569;
   gap: 0.5rem;
@@ -65,12 +65,12 @@
 /* Responsywność */
 @media (max-width: 768px) {
   .contact-cards {
-    flex-direction: column;  /* karty układają się pionowo */
-    align-items: center;     /* wyśrodkowanie kart */
+    flex-direction: column;  
+    align-items: center;     
   }
 
   .contact-card {
-    width: 80%;              /* karty zajmują 80% szerokości ekranu */
+    width: 80%;              
   }
 }
 
