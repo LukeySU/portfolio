@@ -10,6 +10,14 @@
   color: #1e293b;
 }
 
+
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  gap: 0.5rem;
+}
+
 .contact p, .contact a {
   font-size: 1.1rem;
   color: #475569;
@@ -17,12 +25,12 @@
   display: inline-block;
   padding: 0.5rem 1rem;
   border-radius: 12px;
-  background: rgba(0,0,0,0.05); /* lekko półprzezroczyste tło */
+  background: rgba(0,0,0,0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-decoration: none;
 }
 
-/* Glow pulsujący na hover */
+
 .contact p:hover, .contact a:hover {
   transform: translateY(-2px);
   box-shadow: 0 0 10px #4f46e5, 0 0 20px #06b6d4, 0 0 30px #4f46e5;
@@ -84,6 +92,7 @@
     align-items: center;
   }
 }
+
 
 
 
