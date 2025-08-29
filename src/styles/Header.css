@@ -71,9 +71,29 @@
 
 }
 .logo-img {
- width: 150px;    
+  width: 150px;    /* duże logo na desktopie */
   height: 150px;
   object-fit: contain;
+}
+
+/* Na mniejszych ekranach */
+@media (max-width: 768px) {
+  .logo-img {
+    width: 100px;  /* zmniejszamy proporcjonalnie */
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-img {
+    width: 60px;   /* jeszcze mniejsze na bardzo małych ekranach */
+    height: 60px;
+  }
+
+  .nav a {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.8rem;
+  }
 }
 
 
