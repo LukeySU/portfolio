@@ -4,15 +4,15 @@ import "../styles/Skills.css";
 const skillsGroups = [
   {
     title: "Containers & Automation",
-    skills: ["Docker", "Ansible", "Kubernetes", "Terraform"]
+    skills: ["Docker", "Ansible", "Kubernetes", "Terraform", "CI/CD"]
   },
   {
     title: "Programming Languages",
-    skills: ["Python", "JavaScript"]
+    skills: ["Python", "JavaScript", "SQL", "Bash/Shell scripting"]
   },
   {
     title: "Frontend",
-    skills: ["React", "CSS", "HTML"]
+    skills: ["React", "CSS", "HTML", "Responsive Design", "Tailwind CSS"]
   },
   {
     title: "Infrastructure & Monitoring",
@@ -20,8 +20,14 @@ const skillsGroups = [
       "System monitoring and performance optimization",
       "Application support and incident resolution",
       "Server administration (Linux, Windows)",
-      "Cloud services and virtualization (AWS, Azure, VMware)",
-      "Automation and scripting for efficient operations"
+      "Cloud services and virtualization (AWS, GCP, VMware)",
+      "Automation and scripting for efficient operations",
+      "Infrastructure as Code",
+      "CI/CD pipelines (GitHub Actions, GitLab CI, Jenkins)",
+      "Configuration management (Ansible)",
+      "Bash, Python, PowerShell advanced scripting",
+      "Hybrid & multi-cloud environments",
+      "IAM (Identity & Access Management) in AWS"
     ]
   }
 ];
@@ -37,10 +43,7 @@ function Skills() {
             <h4>{group.title}</h4>
             <ul className="skills-list">
               {group.skills.map((skill, i) => (
-                <li key={i}>
-                  <span className="bullet"></span>
-                  {skill}
-                </li>
+                <li key={i}>{skill}</li>   
               ))}
             </ul>
           </div>
@@ -51,6 +54,7 @@ function Skills() {
 }
 
 export default Skills;
+
 
 
 

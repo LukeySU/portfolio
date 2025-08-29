@@ -56,13 +56,13 @@
   gap: 0.5rem;
 }
 
-/* Ikony */
+
 .contact-icon {
   font-size: 1.5rem;
   color: #3b82f6;
 }
 
-/* Responsywność */
+
 @media (max-width: 768px) {
   .contact-cards {
     flex-direction: column;  
