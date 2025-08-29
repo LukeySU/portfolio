@@ -1,17 +1,17 @@
 .header {
-  max-width: 1200px; /* szerokość jak reszta sekcji */
-  margin: 0 auto;     /* wyśrodkowanie na stronie */
+  max-width: 1200px; 
+  margin: 0 auto;
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(90deg, #4f46e5, #06b6d4); /* gradient tylko w headerze */
+  background: linear-gradient(90deg, #4f46e5, #06b6d4);
   color: white;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   position: sticky;
   top: 0;
   z-index: 100;
-  border-radius: 12px; /* opcjonalnie zaokrąglone rogi */
+  border-radius: 12px;
 }
 
 .logo {
@@ -19,26 +19,30 @@
   font-weight: bold;
 }
 
+.nav {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap; 
+  justify-content: flex-end; 
+}
+
 .nav a {
   position: relative;
-  margin-left: 1.5rem;
   color: #fff;
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.8rem; 
   border-radius: 12px;
-  background: rgba(0,0,0,0.2); /* półprzezroczyste tło */
+  background: rgba(0,0,0,0.2);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Glow pulsujący na hover */
 .nav a:hover {
   transform: translateY(-2px);
   box-shadow: 0 0 10px #4f46e5, 0 0 20px #06b6d4, 0 0 30px #4f46e5;
   animation: pulseGlow 1.5s infinite;
 }
 
-/* Animacja delikatnego pulsowania glow */
 @keyframes pulseGlow {
   0% {
     box-shadow: 0 0 10px #4f46e5, 0 0 20px #06b6d4, 0 0 30px #4f46e5;
@@ -48,6 +52,14 @@
   }
   100% {
     box-shadow: 0 0 10px #4f46e5, 0 0 20px #06b6d4, 0 0 30px #4f46e5;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .nav a {
+    padding: 0.4rem 0.6rem; 
+    font-size: 0.9rem;
   }
 }
 
