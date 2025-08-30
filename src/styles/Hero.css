@@ -47,13 +47,17 @@
   transform: scale(1.05);
 }
 
-.hero-image img {
+.hero-image img{
   width: 180px; 
-  border-radius: 37%;
-  border-style:double;
-  border-color:antiquewhite;
-  object-fit: cover;
+  position: relative;
+  display: inline-block;
+  border-radius: 20px; 
+  padding: 1px; 
+  background: linear-gradient(45deg, #4f46e5, #06b6d4);
+  
+ 
 }
+
 
 @keyframes fadeInDown {
   from { opacity: 0; transform: translateY(-30px); }
@@ -67,3 +71,4 @@
     gap: 2rem;
   }
 }
+ 
