@@ -7,7 +7,8 @@ const projects = [
     description: "A personal portfolio website built with React and CSS, fully responsive.",
     link: "#"
   },
-  {
+  {/*
+    {
     title: "Weather App",
     description: "A web app fetching live weather data using an API and React hooks.",
     link: "#"
@@ -17,6 +18,7 @@ const projects = [
     description: "A simple Todo list with CRUD functionality and local storage.",
     link: "#"
   }
+    */}
 ];
 
 function Projects() {
