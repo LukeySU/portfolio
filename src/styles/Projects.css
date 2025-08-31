@@ -23,6 +23,8 @@
   background: #f8fafc;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   transition: transform 0.2s ease, box-shadow 0.3s ease;
+  text-align: center;
+ 
 }
 
 .project-card:hover {
@@ -33,6 +35,8 @@
 .project-card h4 {
   margin-bottom: 0.5rem;
   color: #334155;
+  
+  
 }
 
 .project-link {
