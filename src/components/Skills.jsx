@@ -1,33 +1,53 @@
 import React from "react";
+import { 
+  FaDocker, FaPython, FaJs, FaHtml5, FaCss3Alt, FaReact, 
+  FaAws, FaGitAlt, FaLinux, FaCode, FaServer, FaTools 
+} from "react-icons/fa";
 import "../styles/Skills.css";
 
 const skillsGroups = [
   {
-    title: "Containers & Automation:",
-    skills: ["Docker", "Ansible", "Kubernetes", "Terraform", "CI/CD"]
-  },
-  {
-    title: "Programming Languages:",
-    skills: ["Python", "JavaScript", "SQL", "Bash/Shell scripting"]
-  },
-  {
-    title: "Frontend:",
-    skills: ["React", "CSS", "HTML:", "Responsive Design", ]
-  },
-  {
-    title: "Infrastructure & Monitoring:",
+    title: "Containers & Automation",
     skills: [
-      "System monitoring and performance optimization",
-      "Application support and incident resolution",
-      "Server administration (Linux, Windows)",
-      "Cloud services and virtualization (AWS, GCP, VMware)",
-      "Automation and scripting for efficient operations",
-      "Infrastructure as Code",
-      "CI/CD pipelines (GitHub Actions, GitLab CI, Jenkins)",
-      "Configuration management (Ansible)",
-      "Bash, Python, PowerShell advanced scripting",
-      "Hybrid & multi-cloud environments",
-      "IAM (Identity & Access Management) in AWS"
+      { name: "Docker", icon: <FaDocker /> },
+      { name: "Ansible", icon: <FaCode /> },
+      { name: "Kubernetes", icon: <FaCode /> },
+      { name: "Terraform", icon: <FaCode /> },
+      { name: "CI/CD", icon: <FaGitAlt /> }
+    ]
+  },
+  {
+    title: "Programming & Scripting",
+    skills: [
+      { name: "Python", icon: <FaPython /> },
+      { name: "JavaScript", icon: <FaJs /> },
+      { name: "SQL", icon: <FaCode /> },
+      { name: "Bash/Shell scripting", icon: <FaLinux /> }
+    ]
+  },
+  {
+    title: "Frontend",
+    skills: [
+      { name: "React", icon: <FaReact /> },
+      { name: "CSS", icon: <FaCss3Alt /> },
+      { name: "HTML", icon: <FaHtml5 /> },
+      { name: "Responsive Design", icon: <FaCode /> }
+    ]
+  },
+  {
+    title: "Infrastructure & Monitoring",
+    skills: [
+      { name: "System monitoring", icon: <FaServer /> },
+      { name: "Application support", icon: <FaTools /> },
+      { name: "Server administration", icon: <FaLinux /> },
+      { name: "Cloud services", icon: <FaAws /> },
+      { name: "Automation & scripting", icon: <FaCode /> },
+      { name: "Infrastructure as Code", icon: <FaCode /> },
+      { name: "CI/CD pipelines", icon: <FaGitAlt /> },
+      { name: "Configuration management", icon: <FaCode /> },
+      { name: "Advanced scripting", icon: <FaCode /> },
+      { name: "Hybrid & multi-cloud", icon: <FaAws /> },
+      { name: "IAM in AWS", icon: <FaAws /> }
     ]
   }
 ];
@@ -36,16 +56,18 @@ function Skills() {
   return (
     <section id="skills" className="skills-section">
       <h3>Skills & Technologies</h3>
-
       <div className="skills-groups-container">
         {skillsGroups.map((group, gIndex) => (
           <div key={gIndex} className="skills-group">
             <h4>{group.title}</h4>
-            <ul className="skills-list">
+            <div className="skills-cards">
               {group.skills.map((skill, i) => (
-                <li key={i}>{skill}</li>   
+                <div key={i} className="skill-card">
+                  <span className="skill-icon">{skill.icon}</span>
+                  <span className="skill-name">{skill.name}</span>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         ))}
       </div>

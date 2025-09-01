@@ -7,11 +7,38 @@
 
 .header {
   position: fixed;
-  background: black;
   width: 100%;
   padding: 0.5rem 1rem;
   z-index: 100;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
+  background: black;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  overflow: hidden; /* dla poświaty */
+  animation: slideDown 0.8s ease-out;
+}
+
+/* Slide-in z góry */
+@keyframes slideDown {
+  0% { transform: translateY(-100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Pływająca poświata */
+.header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0) 100%);
+  transform: skewX(-20deg);
+  animation: shimmer 3s infinite;
+  pointer-events: none;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
 }
 
 .header-inner {
