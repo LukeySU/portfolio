@@ -1,13 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satoshi:wght@300;400;500;600;700&display=swap');
 .app {
-  font-family: Roboto, Arial, sans-serif;
+  font-family: 'Figtree', sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  background: #f9fafb;
+  background: transparent;
   color: #111827;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-}
+

@@ -12,7 +12,7 @@ const skillsGroups = [
   },
   {
     title: "Frontend",
-    skills: ["React", "CSS", "HTML", "Responsive Design", "Tailwind CSS"]
+    skills: ["React", "CSS", "HTML", "Responsive Design", ]
   },
   {
     title: "Infrastructure & Monitoring",

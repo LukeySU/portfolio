@@ -1,8 +1,11 @@
 .footer {
+  position: relative;      
   text-align: center;
   padding: 1rem;
-  background: #1e293b;
-  color: #e2e8f0;
-  margin-top: 2rem;
+  background: black;
+  color: white;
   font-size: 0.9rem;
+  z-index: 1;
 }
+
+

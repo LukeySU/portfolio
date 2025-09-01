@@ -10,7 +10,7 @@ function Contact() {
         <div className="contact-card">
           <div className="contact-item">
             <FaEnvelope className="contact-icon" />
-            <span>lukasz.sulowski@outlook.com</span>
+            <span>lukasz.sulowski@data.pl</span>
           </div>
         </div>
         <div className="contact-card">
