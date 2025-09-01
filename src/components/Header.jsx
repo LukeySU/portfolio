@@ -12,7 +12,9 @@ function Header() {
       <div className="header-inner">
         {/* Logo */}
         <div className="logo-container">
+          <a href="https://lukasz-sulowski.pl">
           <img src={logoImg} alt="Logo" className="logo-img" />
+          </a>
         </div>
 
         {/* Nawigacja */}
