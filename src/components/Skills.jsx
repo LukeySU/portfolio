@@ -3,19 +3,19 @@ import "../styles/Skills.css";
 
 const skillsGroups = [
   {
-    title: "Containers & Automation",
+    title: "Containers & Automation:",
     skills: ["Docker", "Ansible", "Kubernetes", "Terraform", "CI/CD"]
   },
   {
-    title: "Programming Languages",
+    title: "Programming Languages:",
     skills: ["Python", "JavaScript", "SQL", "Bash/Shell scripting"]
   },
   {
-    title: "Frontend",
-    skills: ["React", "CSS", "HTML", "Responsive Design", ]
+    title: "Frontend:",
+    skills: ["React", "CSS", "HTML:", "Responsive Design", ]
   },
   {
-    title: "Infrastructure & Monitoring",
+    title: "Infrastructure & Monitoring:",
     skills: [
       "System monitoring and performance optimization",
       "Application support and incident resolution",

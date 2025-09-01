@@ -64,11 +64,11 @@
 
 .hamburger span {
   display: block;
-  height: 4px;
+  height: 5px;
   width: 100%;
   background: white;
   border-radius: 2px;
-  transition: all 0.3s ease;
+  transition: all 0.6s ease;
 }
 
 
