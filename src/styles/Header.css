@@ -1,28 +1,30 @@
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+
 .header {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 0.5rem 1rem;
-  z-index: 100;
+  height: 140px; 
   background: black;
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  overflow: hidden; /* dla poświaty */
+  z-index: 9999;
   animation: slideDown 0.8s ease-out;
+  display: flex;
+  align-items: center;
 }
 
-/* Slide-in z góry */
 @keyframes slideDown {
   0% { transform: translateY(-100%); opacity: 0; }
   100% { transform: translateY(0); opacity: 1; }
 }
 
-/* Pływająca poświata */
+
 .header::after {
   content: "";
   position: absolute;
@@ -34,6 +36,7 @@
   transform: skewX(-20deg);
   animation: shimmer 3s infinite;
   pointer-events: none;
+  z-index: 0;
 }
 
 @keyframes shimmer {
@@ -41,24 +44,26 @@
   100% { left: 100%; }
 }
 
+
 .header-inner {
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
   position: relative;
+  z-index: 1;
 }
 
 
-.logo-img {
-  width: 120px;
-  height: auto;
-}
+.logo-img { width: 150px; 
+padding-left: 5px;}
 
 
 .nav {
-  display: flex;
+  display: flex; 
   gap: 1rem;
 }
 
@@ -68,89 +73,82 @@
   padding: 0.3rem 0.8rem;
   border-radius: 5px;
   font-size: 18px;
-  transition: transform 0.5s ease, color 0.5s ease;
+  transition: transform 0.3s, color 0.3s;
 }
 
 .nav a:hover {
-  color:rgb(109, 116, 121);
-  transform: scale(1.2); 
-  
+  transform: scale(1.2);
+  color: rgb(109,116,121);
 }
 
 
-.hamburger {
-  display: none;
-  width: 35px;
-  height: 25px;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-  z-index: 1000;
-  position: relative;
-}
-
-.hamburger span {
-  display: block;
-  height: 5px;
-  width: 100%;
-  background: white;
-  border-radius: 2px;
-  transition: all 0.6s ease;
-}
-
-
-.hamburger.open span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger.open span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
+.hamburger { display: none; }
 
 
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 35px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 10001;
   }
 
+  .hamburger span {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+ 
   .nav {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: black;
+    position: fixed;
+    top: 140px;        
+    left: 0;
+    width: 100vw;
+    background: #222;
     flex-direction: column;
-    width: 200px;
-    border-radius: 5px;
-    overflow: hidden;
+    align-items: center;
+    overflow: hidden;   
+    max-height: 0;      
+    transition: max-height 0.6s ease-in-out; 
+    z-index: 999;
   }
 
   .nav.show {
-    display: flex;
+    max-height: 500px;  
   }
 
   .nav a {
-    padding: 0.5rem 1rem;
+    padding: 1rem 0;
+    width: 100%;
+    text-align: center;
     border-bottom: 1px solid #333;
+    font-size: 1.2rem;
   }
 
-  .nav a:last-child {
-    border-bottom: none;
-  }
+  .nav a:last-child { border-bottom: none; }
 }
+
 
 @media (max-width: 480px) {
-  .logo-img {
-    width: 60px;
-  }
-
-  .nav a {
-    font-size: 0.9rem;
-  }
+  .logo-img { width: 60px; }
+  .nav a { font-size: 1rem; }
 }
 
+
+body {
+  padding-top: 140px; 
+}
 
 
 

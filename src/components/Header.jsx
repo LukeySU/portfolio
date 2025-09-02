@@ -10,21 +10,21 @@ function Header() {
   return (
     <header className="header">
       <div className="header-inner">
-        {/* Logo */}
+        
         <div className="logo-container">
-          <a href="https://lukasz-sulowski.pl">
-          <img src={logoImg} alt="Logo" className="logo-img" />
+          <a href="/">
+            <img src={logoImg} alt="Logo" className="logo-img" />
           </a>
         </div>
 
-        {/* Nawigacja */}
+       
         <nav className={`nav ${menuOpen ? "show" : ""}`}>
-          <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
-          <a href="#contact">Contact</a>
+          <a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a>
+          <a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a>
+          <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
         </nav>
 
-        {/* Hamburger */}
+       
         <div
           className={`hamburger ${menuOpen ? "open" : ""}`}
           onClick={toggleMenu}
