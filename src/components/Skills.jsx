@@ -1,7 +1,7 @@
 import React from "react";
 import { 
   FaDocker, FaPython, FaJs, FaHtml5, FaCss3Alt, FaReact, 
-  FaAws, FaGitAlt, FaLinux, FaCode, FaServer, FaTools 
+  FaAws, FaGitAlt, FaLinux, FaCode, FaServer, FaTools, FaNetworkWired, FaShieldAlt, FaBell, FaChartLine, FaTerminal
 } from "react-icons/fa";
 import "../styles/Skills.css";
 
@@ -13,7 +13,7 @@ const skillsGroups = [
       { name: "Ansible", icon: <FaCode /> },
       { name: "Kubernetes", icon: <FaCode /> },
       { name: "Terraform", icon: <FaCode /> },
-      { name: "CI/CD", icon: <FaGitAlt /> }
+      { name: "CI/CD", icon: <FaTools /> }
     ]
   },
   {
@@ -22,7 +22,8 @@ const skillsGroups = [
       { name: "Python", icon: <FaPython /> },
       { name: "JavaScript", icon: <FaJs /> },
       { name: "SQL", icon: <FaCode /> },
-      { name: "Bash/Shell scripting", icon: <FaLinux /> }
+      { name: "Shell", icon: <FaTerminal/> },
+      { name: "Bash", icon: <FaTerminal/> }
     ]
   },
   {
@@ -31,23 +32,29 @@ const skillsGroups = [
       { name: "React", icon: <FaReact /> },
       { name: "CSS", icon: <FaCss3Alt /> },
       { name: "HTML", icon: <FaHtml5 /> },
-      { name: "Responsive Design", icon: <FaCode /> }
+      { name: "Responsive Design", icon: <FaCode /> },
+      { name: "Next.js", icon: <FaReact /> },
     ]
   },
   {
-    title: "Infrastructure & Monitoring",
+    title: "Infrastructure",
     skills: [
-      { name: "System monitoring", icon: <FaServer /> },
-      { name: "Application support", icon: <FaTools /> },
       { name: "Server administration", icon: <FaLinux /> },
-      { name: "Cloud services", icon: <FaAws /> },
-      { name: "Automation & scripting", icon: <FaCode /> },
-      { name: "Infrastructure as Code", icon: <FaCode /> },
-      { name: "CI/CD pipelines", icon: <FaGitAlt /> },
-      { name: "Configuration management", icon: <FaCode /> },
-      { name: "Advanced scripting", icon: <FaCode /> },
-      { name: "Hybrid & multi-cloud", icon: <FaAws /> },
-      { name: "IAM in AWS", icon: <FaAws /> }
+      { name: "Cloud services (AWS, GCP)", icon: <FaAws /> },
+      { name: "Virtualization (VMware, Hyper-V)", icon: <FaServer /> },
+      { name: "Windows/Linux administration", icon: <FaLinux /> },
+      { name: "Networking", icon: <FaNetworkWired /> }
+    ]
+  },
+  {
+    title: "Monitoring",
+    skills: [
+    { name: "Performance & Metrics Monitoring", icon: <FaChartLine /> },
+    { name: "Alerting & Incident Response", icon: <FaBell /> },
+    { name: "Network & System Reliability", icon: <FaNetworkWired /> },
+    { name: "Cloud Security & Access Control", icon: <FaShieldAlt /> },
+    
+    
     ]
   }
 ];

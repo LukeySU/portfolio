@@ -17,6 +17,7 @@
   animation: slideDown 0.8s ease-out;
   display: flex;
   align-items: center;
+  
 }
 
 @keyframes slideDown {
