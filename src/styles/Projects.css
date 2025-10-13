@@ -23,6 +23,8 @@
   margin-bottom: 1.5rem;
   text-align: center;
   color: #1e293b;
+  text-transform: uppercase;
+  letter-spacing: 5px;
 }
 
 .projects-grid {

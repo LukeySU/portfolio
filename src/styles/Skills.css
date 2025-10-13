@@ -24,6 +24,8 @@
   font-weight: bold;
   margin-bottom: 3rem;
   color: #1e293b;
+  text-transform: uppercase;
+  letter-spacing: 5px;
 }
 
 
@@ -47,6 +49,8 @@
   font-weight: bold;
   margin-bottom: 1rem;
   color: #1e293b;
+  letter-spacing: 1px;
+  
 }
 
 

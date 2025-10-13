@@ -10,19 +10,21 @@ function Contact() {
         <div className="contact-card">
           <div className="contact-item">
             <FaEnvelope className="contact-icon" />
-            <span>lukasz.sulowski@data.pl</span>
+            <span className="contact-text">lukasz.sulowski@data.pl</span>
           </div>
         </div>
+
         <div className="contact-card">
           <div className="contact-item">
             <FaPhone className="contact-icon" />
-            <span>+48 733 944 049</span>
+            <span className="contact-text">+48 733 944 049</span>
           </div>
         </div>
+
         <div className="contact-card">
           <div className="contact-item">
             <FaMapMarkerAlt className="contact-icon" />
-            <span>Lublin, Poland</span>
+            <span className="contact-text">Lublin, Poland</span>
           </div>
         </div>
       </div>
@@ -31,6 +33,7 @@ function Contact() {
 }
 
 export default Contact;
+
 
 
 

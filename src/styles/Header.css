@@ -59,7 +59,7 @@
 }
 
 
-.logo-img { width: 150px; 
+.logo-img { width: 170px; 
 padding-left: 5px;}
 
 
@@ -75,11 +75,15 @@ padding-left: 5px;}
   border-radius: 5px;
   font-size: 18px;
   transition: transform 0.3s, color 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 5px;
 }
 
 .nav a:hover {
   transform: scale(1.2);
   color: rgb(109,116,121);
+  
+  
 }
 
 
