@@ -1,12 +1,22 @@
-# React + Vite
+# Moje SRE Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Stack
+- React frontend (host: Netlify)
+- CI/CD: GitHub Actions (testing + Lighthouse)
+- Monitoring uptime: health endpoint + Uptime Kuma / BetterStack
+- Runtime errors: Sentry
+- Infrastructure as Code: Terraform
 
-Currently, two official plugins are available:
+## CI/CD
+[![CI Portfolio](https://github.com/LukeySU/portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/LukeySU/portfolio/actions/workflows/ci.yml)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Monitoring / Observability
+- Health endpoint: `/.netlify/functions/health`  # <-- PODMIENIĆ NA SWÓJ LINK
+- Uptime badge: ![Uptime](https://link-do-badge)  # <-- PODMIENIĆ LINK DO BADGE
+- Dashboard screenshot: see `/docs/dashboard.png`
 
-## Expanding the ESLint configuration
+## Incident log
+Zobacz [`INCIDENTS.md`](./INCIDENTS.md)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Architektura
+![Architektura](./docs/architecture.png)
