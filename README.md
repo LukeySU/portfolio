@@ -2,10 +2,10 @@
 
 ## Stack
 - React frontend (host: Netlify)
-- CI/CD: GitHub Actions (testing + Lighthouse)
-- Monitoring uptime: health endpoint + Uptime Kuma / BetterStack
+- CI/CD: GitHub Actions
+- Monitoring uptime: health endpoint + Sentry
 - Runtime errors: Sentry
-- Infrastructure as Code: Terraform
+
 
 ## CI/CD
 [![CI Portfolio](https://github.com/LukeySU/portfolio/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/LukeySU/portfolio/actions/workflows/ci.yml)
