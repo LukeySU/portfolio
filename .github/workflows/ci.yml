@@ -1,4 +1,4 @@
-name: CI
+name: CI/CD
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
       - master
 
 jobs:
-  build-and-test:
+  build-test-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -26,3 +26,11 @@ jobs:
 
       - name: Build Vite
         run: npm run build
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v1.2
+        with:
+          publish-dir: ./dist           
+          production-deploy: true
+          netlify-auth-token: ${{ secrets.NETLIFY_TOKEN }}
+          netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
