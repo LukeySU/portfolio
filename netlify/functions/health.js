@@ -1,11 +1,9 @@
-import fetch from "node-fetch";
+export async function handler() {
+  const monitorUrl = "https://o4510265954205696.ingest.de.sentry.io/api/4510265988350032/cron/heartbeat/39cd8b4ef3f2e8aa1832ebf7fca25664/";
 
-exports.handler = async function () {
-  
   try {
-    await fetch("https://sentry.io/api/0/monitors/https://o4510265954205696.ingest.de.sentry.io/checkinhttps://o4510265954205696.ingest.de.sentry.io/api/4510265988350032/cron/heartbeat/39cd8b4e3f3208aa1832ebf7fca25664/", {
-      method: "POST",
-    });
+    
+    await fetch(`${monitorUrl}?status=ok`, { method: "POST" });
   } catch (err) {
     console.error("Sentry monitor checkin failed:", err);
   }
@@ -16,4 +14,4 @@ exports.handler = async function () {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ status: "ok" }),
   };
-};
+}
