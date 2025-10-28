@@ -6,7 +6,7 @@ import { FaEnvelope } from "react-icons/fa";
 function Hero() {
   return (
     <section className="hero">
-      {/* Niewidoczny offset dla kotwicy */}
+      
       <div id="about" style={{ position: "relative", top: "-140px" }}></div>
 
       <div className="hero-content">

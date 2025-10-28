@@ -42,13 +42,6 @@ function Contact() {
             }
           />
         </div>
-
-        {/* Lokalizacja */}
-        <div className="contact-card">
-          <div className="contact-link" aria-hidden="true" title="Lublin, Poland">
-            <FaMapMarkerAlt className="contact-icon" />
-          </div>
-        </div>
       </div>
     </section>
   );
