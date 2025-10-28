@@ -1,4 +1,4 @@
-# Moje SRE Portfolio
+# Frontend | SRE - Portfolio
 
 ## Stack
 - React frontend (host: Netlify)
@@ -11,11 +11,11 @@
 
 ## Monitoring / Observability
 - Uptime badge: ![Uptime](https://img.shields.io/website-up-down-green-red/https/lukasz-sulowski.netlify.app/.netlify/functions/health?style=flat-square)
-- Runtime errors: Sentry (monitoring błędów aplikacji)
-- Dashboard screenshot: see `/docs/dashboard.png`
+- Runtime errors: Sentry (application error monitoring)
+- Dashboard screenshot: see ![Dashboard](./docs/dashboard.png)`
 
 ## Incident log
 Zobacz [`INCIDENTS.md`](./INCIDENTS.md)
 
-## Architektura
-![Architektura](./docs/architecture.png)
+## Architecture
+![Architecture](./docs/architecture.png)
