@@ -14,8 +14,8 @@
 ![Uptime](https://img.shields.io/website-up-down-green-red/https/lukasz-sulowski.netlify.app/.netlify/functions/health)
 
 
-- Hearbeat monitoring: Sentry
-![Hearbeat](./docs/heartbeat.png)
+- Heartbeat monitoring: Sentry
+![Heartbeat](./docs/heartbeat.png)
 
 - Dashboard screenshot: see ![Dashboard](./docs/dashboard.png)`
 
