@@ -1,6 +1,7 @@
-exports.handler = async () => {
+exports.handler = async function () {
   return {
     statusCode: 200,
-    body: JSON.stringify({ status: "OK", timestamp: new Date().toISOString() }),
+    headers: { "Content-Type": "text/plain" },
+    body: "ok", 
   };
 };
