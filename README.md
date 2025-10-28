@@ -11,7 +11,8 @@
 
 ## Monitoring / Observability
 - Uptime badge: 
-[![Status](https://img.shields.io/badge/%F0%9F%94%8C%20Service-Stable-00bfa5?style=flat-square&logo=react&logoColor=61dafb)](https://lukasz-sulowski.netlify.app/health)
+![Status](https://img.shields.io/endpoint?url=https://lukasz-sulowski.netlify.app/.netlify/functions/health&style=for-the-badge&logo=netlify&logoColor=white)
+
 
 - Runtime errors: Sentry (application error monitoring)
 - Dashboard screenshot: see ![Dashboard](./docs/dashboard.png)`
