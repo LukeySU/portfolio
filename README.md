@@ -14,7 +14,9 @@
 ![Uptime](https://img.shields.io/website-up-down-green-red/https/lukasz-sulowski.netlify.app/.netlify/functions/health)
 
 
-- Runtime errors: Sentry (application error monitoring)
+- Hearbeat monitoring: Sentry
+![Hearbeat](./docs/heartbeat.png)
+
 - Dashboard screenshot: see ![Dashboard](./docs/dashboard.png)`
 
 ## Incident log
