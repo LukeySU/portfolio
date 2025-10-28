@@ -10,7 +10,7 @@
 [![CI Portfolio](https://github.com/LukeySU/portfolio/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/LukeySU/portfolio/actions/workflows/ci.yml)
 
 ## Monitoring / Observability
-- Uptime badge: ![Uptime](https://img.shields.io/website-up-down-green-red/https%3A%2F%2Flukasz-sulowski.netlify.app%2F.netlify%2Ffunctions%2Fhealth?style=flat-square)
+- Uptime badge: ![Uptime](https://img.shields.io/website-up-down-green-red/https/lukasz-sulowski.netlify.app/.netlify/functions/health?style=flat-square)
 - Runtime errors: Sentry (application error monitoring)
 - Dashboard screenshot: see ![Dashboard](./docs/dashboard.png)`
 
