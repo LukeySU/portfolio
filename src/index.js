@@ -1,5 +1,5 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';  // Vite używa createRoot
+import { createRoot } from 'react-dom/client'; 
 import App from './App.jsx';
 import './App.css';
 import * as Sentry from "@sentry/react";
@@ -12,8 +12,8 @@ Sentry.init({
   sendDefaultPii: true
 });
 
-// Tworzymy root i renderujemy aplikację
-const container = document.getElementById('root');  // upewnij się, że w index.html masz <div id="root"></div>
+
+const container = document.getElementById('root');  
 const root = createRoot(container);
 
 root.render(

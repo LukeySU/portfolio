@@ -11,8 +11,8 @@
 [![CI Portfolio](https://github.com/LukeySU/portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/LukeySU/portfolio/actions/workflows/ci.yml)
 
 ## Monitoring / Observability
-- Health endpoint: `/.netlify/functions/health`  # <-- PODMIENIĆ NA SWÓJ LINK
-- Uptime badge: ![Uptime](https://link-do-badge)  # <-- PODMIENIĆ LINK DO BADGE
+- Health endpoint: `/lukasz-sulowski.netlify.app/.netlify/functions/health`
+- Uptime badge: ![Uptime](https://link-do-badge)  
 - Dashboard screenshot: see `/docs/dashboard.png`
 
 ## Incident log
