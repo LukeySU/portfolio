@@ -13,7 +13,7 @@
 ## Monitoring / Observability
 - Health endpoint: `/lukasz-sulowski.netlify.app/.netlify/functions/health`
 - Uptime badge: ![Uptime](https://img.shields.io/website-up-down-green-red/https/lukasz-sulowski.netlify.app/.netlify/functions/health?style=flat-square)
-)  
+
 - Dashboard screenshot: see `/docs/dashboard.png`
 
 ## Incident log
