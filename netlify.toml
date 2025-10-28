@@ -3,4 +3,8 @@
   command = "npm run build"
 
 [functions]
-  directory = "netlify/functions"
+    directory = "netlify/functions"
+  node_bundler = "esbuild"
+  external_node_modules = []
+  included_files = ["netlify/functions/health.js"]
+  node_version = "20"
