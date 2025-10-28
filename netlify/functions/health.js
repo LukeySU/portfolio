@@ -1,7 +1,6 @@
-exports.handler = async function () {
-  return {
-    statusCode: 200,
-    headers: { "Content-Type": "text/plain" },
-    body: "ok", 
-  };
-};
+export async function handler(event, context) {
+  return new Response(JSON.stringify({ status: "ok" }), {
+    status: 200,
+    headers: { "Content-Type": "application/json" },
+  });
+}
