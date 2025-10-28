@@ -8,10 +8,10 @@
 - Infrastructure as Code: Terraform
 
 ## CI/CD
-[![CI Portfolio](https://github.com/LukeySU/portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/LukeySU/portfolio/actions/workflows/ci.yml)
+[![CI Portfolio](https://github.com/LukeySU/portfolio/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/LukeySU/portfolio/actions/workflows/ci.yml)
 
 ## Monitoring / Observability
-- Health endpoint: `/lukasz-sulowski.netlify.app/.netlify/functions/health`
+- Health endpoint: `/.lukasz-sulowski.netlify.app/.netlify/functions/health`
 - Uptime badge: ![Uptime](https://img.shields.io/website-up-down-green-red/https/lukasz-sulowski.netlify.app/.netlify/functions/health?style=flat-square)
 
 - Dashboard screenshot: see `/docs/dashboard.png`
