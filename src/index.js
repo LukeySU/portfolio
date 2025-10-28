@@ -13,6 +13,8 @@ root.render(
 
 Sentry.init({
   dsn: "https://39cd8b4ef3f2e8aa1832ebf7fca25664@o4510265954205696.ingest.de.sentry.io/4510265988350032",
+  environment: "production",
+  tracesSampleRate: 1.0,
   // Setting this option to true will send default PII data to Sentry.
   // For example, automatic IP address collection on events
   sendDefaultPii: true
