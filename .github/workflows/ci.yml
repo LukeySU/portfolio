@@ -1,4 +1,4 @@
-name: CI/CD
+name: CI
 
 on:
   push:
@@ -7,8 +7,9 @@ on:
       - master
 
 jobs:
-  build-test-deploy:
+  build-and-test:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -25,12 +26,5 @@ jobs:
         run: npm test
 
       - name: Build Vite
-        run: npm run build
-
-        with:
-          publish-dir: ./dist
-          production-deploy: true
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: npm run build}}
 
