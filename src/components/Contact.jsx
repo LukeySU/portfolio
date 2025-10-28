@@ -1,30 +1,52 @@
 import React from "react";
 import "../styles/Contact.css";
-import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
+import { FaEnvelope, FaLinkedin, FaGithub, FaMapMarkerAlt } from "react-icons/fa";
 
 function Contact() {
   return (
     <section id="contact" className="contact">
       <h3>Contact Me</h3>
       <div className="contact-cards">
+        {/* Mail */}
         <div className="contact-card">
-          <div className="contact-item">
+          <a
+            href="mailto:lukasz.sulowski@data.pl"
+            aria-label="Wyślij e-mail do Łukasza"
+            title="Wyślij e-mail"
+            className="contact-link"
+          >
             <FaEnvelope className="contact-icon" />
-            <span className="contact-text">lukasz.sulowski@data.pl</span>
-          </div>
+          </a>
         </div>
 
+        {/* LinkedIn */}
         <div className="contact-card">
-          <div className="contact-item">
-            <FaPhone className="contact-icon" />
-            <span className="contact-text">+48 733 944 049</span>
-          </div>
+          <FaLinkedin
+            className="contact-icon"
+            title="Odwiedź LinkedIn"
+            style={{ cursor: "pointer" }}
+            onClick={() =>
+              window.open("https://www.linkedin.com/in/lukaszsulowski", "_blank", "noopener,noreferrer")
+            }
+          />
         </div>
 
+        {/* GitHub */}
         <div className="contact-card">
-          <div className="contact-item">
+          <FaGithub
+            className="contact-icon"
+            title="Zobacz profil GitHub"
+            style={{ cursor: "pointer" }}
+            onClick={() =>
+              window.open("https://github.com/LukeySU", "_blank", "noopener,noreferrer")
+            }
+          />
+        </div>
+
+        {/* Lokalizacja */}
+        <div className="contact-card">
+          <div className="contact-link" aria-hidden="true" title="Lublin, Poland">
             <FaMapMarkerAlt className="contact-icon" />
-            <span className="contact-text">Lublin, Poland</span>
           </div>
         </div>
       </div>
@@ -33,6 +55,8 @@ function Contact() {
 }
 
 export default Contact;
+
+
 
 
 

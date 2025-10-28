@@ -152,7 +152,15 @@ padding-left: 5px;}
 
 
 body {
-  padding-top: 140px; 
+  padding-top: 300px; 
+}
+section {
+  scroll-margin-top: 140px; 
+}
+
+
+html {
+  scroll-behavior: smooth;
 }
 
 

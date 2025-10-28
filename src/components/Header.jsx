@@ -10,21 +10,19 @@ function Header() {
   return (
     <header className="header">
       <div className="header-inner">
-        
         <div className="logo-container">
           <a href="/">
             <img src={logoImg} alt="Logo" className="logo-img" />
           </a>
         </div>
 
-       
         <nav className={`nav ${menuOpen ? "show" : ""}`}>
+          <a href="#about" onClick={() => setMenuOpen(false)}>About Me</a>
           <a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a>
           <a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a>
           <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
         </nav>
 
-       
         <div
           className={`hamburger ${menuOpen ? "open" : ""}`}
           onClick={toggleMenu}

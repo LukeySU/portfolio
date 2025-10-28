@@ -5,8 +5,7 @@ import logoImg from "../assets/porto.png";
 const projects = [
   {
     title: "Portfolio Website",
-    description: "A personal portfolio website built with React and CSS, fully responsive.",
-    link: "#"
+    description: "A personal portfolio website built with React and CSS, fully responsive. CI/CD pipeline with GitHub Actions and hosted on Netlify. Monitoring uptime with Shields.io and Sentry."
   },
   /*
     {

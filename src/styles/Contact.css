@@ -79,6 +79,7 @@
   font-size: 1.5rem;
   color: #000000;
   flex-shrink: 0;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
