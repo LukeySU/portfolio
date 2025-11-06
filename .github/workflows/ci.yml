@@ -81,7 +81,7 @@ jobs:
         run: npm install -g netlify-cli
 
       - name: Build project
-        run: npm run build
+        run: npx vite build
 
       - name: Deploy to Netlify with functions
         run: |
