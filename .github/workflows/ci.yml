@@ -27,14 +27,14 @@ jobs:
       - name: Build project
         run: npm run build
 
-      # 📦 Upload both frontend and functions as build artifact
+      
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
           name: build-package
           path: |
-            dist
-            netlify/functions
+            ./dist
+            ./netlify/functions
 
   test:
     name: Run tests
@@ -75,6 +75,11 @@ jobs:
           name: build-package
           path: .
 
+      - name: List files before deploy
+        run: |
+          echo "Files before deploy:"
+          ls -R
+
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v2.0.0
         with:
@@ -85,6 +90,7 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
 
 
 
