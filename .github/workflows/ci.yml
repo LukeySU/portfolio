@@ -64,29 +64,31 @@ jobs:
           path: coverage
 
   deploy:
-    name: Deploy to Netlify
+    name: Deploy with Netlify CLI
     runs-on: ubuntu-latest
     needs: test
     if: success()
     steps:
-      - name: Download build artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: build-package
-          path: .
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: List files before deploy
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Netlify CLI
+        run: npm install -g netlify-cli
+
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy to Netlify with functions
         run: |
-          echo "Files before deploy:"
-          ls -R
-
-      - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify@v2.0.0
-        with:
-          publish-dir: ./dist
-          production-deploy: true
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "CI deploy from commit ${{ github.sha }}"
+          netlify deploy --prod \
+            --dir=dist \
+            --functions=netlify/functions \
+            --message "CI deploy from commit ${{ github.sha }}"
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
