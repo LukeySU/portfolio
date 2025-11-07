@@ -12,10 +12,9 @@
 
 ## Monitoring / Observability
 - Uptime badge:
-![System Status](https://img.shields.io/badge/status-up🟢-brightgreen?style=for-the-badge)
-
-![Uptime](https://img.shields.io/badge/uptime-99.8%25-brightgreen?logo=netlify&style=flat-square)
-
+  
+![Status](https://img.shields.io/badge/status-up-brightgreen)  
+![Uptime](https://img.shields.io/badge/uptime-99.8%25-brightgreen)
 
 
 - Heartbeat monitoring: Sentry
