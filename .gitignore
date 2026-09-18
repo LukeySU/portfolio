@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Local source documents (not published)
+Lukasz_Sulowski_CV.pdf
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
