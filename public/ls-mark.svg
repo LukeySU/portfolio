@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Infrastructure terminal mark</title>
+  <path
+    d="M17 4h30l13 13v30L47 60H17L4 47V17L17 4Z"
+    fill="#101712"
+    stroke="#d5fb59"
+    stroke-width="2.5"
+    stroke-linejoin="round"
+  />
+  <path
+    d="m17.5 20.5 11.5 11-11.5 11"
+    fill="none"
+    stroke="#d5fb59"
+    stroke-width="5.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M34 43h13"
+    fill="none"
+    stroke="#f4f4ec"
+    stroke-width="5.5"
+    stroke-linecap="round"
+  />
+</svg>

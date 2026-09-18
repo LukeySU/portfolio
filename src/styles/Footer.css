@@ -13,15 +13,15 @@
   margin: 0;
 }
 .footer-brand {
-  color: var(--paper);
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: -0.06em;
+  display: block;
+  width: 30px;
+  height: 30px;
   text-decoration: none;
 }
-.footer-brand span {
-  color: var(--lime);
+.footer-brand img {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 @media (max-width: 520px) {

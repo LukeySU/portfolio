@@ -1,7 +1,7 @@
 import React from "react";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
-import portoImg from "../assets/nowe-port.png";
-import appImg from "../assets/app.png";
+import portoImg from "../assets/nowe-port.jpg";
+import appImg from "../assets/app.jpg";
 import "../styles/Projects.css";
 
 const projects = [
@@ -14,6 +14,8 @@ const projects = [
     tags: ["React", "CI/CD", "Sentry"],
     link: "https://github.com/LukeySU/portfolio",
     image: portoImg,
+    imageWidth: 1400,
+    imageHeight: 644,
     imageAlt: "Screenshot of the portfolio website",
   },
   {
@@ -24,6 +26,8 @@ const projects = [
       "A Streamlit dashboard that retrieves live weather data and presents a five-day forecast with condition-based visuals.",
     tags: ["Python", "Streamlit", "OpenWeatherMap"],
     image: appImg,
+    imageWidth: 1400,
+    imageHeight: 543,
     imageAlt: "Weather forecast dashboard showing a five-day forecast",
   },
 ];
@@ -35,7 +39,7 @@ function Projects() {
         <div>
           <p className="section-kicker">Selected work</p>
           <h2>
-            Built to be <span>useful.</span>
+            <span>Useful</span> by design.
           </h2>
         </div>
         <p>
@@ -57,7 +61,14 @@ function Projects() {
                   : `Contact me about ${project.title}`
               }
             >
-              <img src={project.image} alt={project.imageAlt} loading="lazy" />
+              <img
+                src={project.image}
+                alt={project.imageAlt}
+                width={project.imageWidth}
+                height={project.imageHeight}
+                loading="lazy"
+                decoding="async"
+              />
               <span className="project-number">{project.number}</span>
               <span className="project-arrow">
                 <FaArrowUpRightFromSquare aria-hidden="true" />

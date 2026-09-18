@@ -101,7 +101,7 @@ function Skills() {
       <div className="section-heading">
         <p className="section-kicker">What I work with</p>
         <h2>
-          Tools for systems <span>that last.</span>
+          The tools behind <span>reliable systems.</span>
         </h2>
         <p className="section-intro">
           Hands-on experience across infrastructure, cloud platforms,

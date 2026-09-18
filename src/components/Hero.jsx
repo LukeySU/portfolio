@@ -1,11 +1,11 @@
 import React from "react";
 import { FaArrowDown, FaArrowRight } from "react-icons/fa";
-import MyPhoto from "../assets/lukasz-hero.png";
+import MyPhoto from "../assets/lukasz-hero.jpg";
 import "../styles/Hero.css";
 
 function Hero() {
   return (
-    <section className="hero" id="about">
+    <section className="hero" id="home">
       <div className="hero-glow" aria-hidden="true" />
       <div className="hero-content">
         <div className="hero-text">
@@ -19,8 +19,8 @@ function Hero() {
             <span>Built for growth.</span>
           </h1>
           <p className="hero-description">
-            I build and maintain dependable infrastructure, automate
-            repetitive work, and help teams deliver safely and with confidence.
+            I build reliable infrastructure and automate the work that slows
+            teams down.
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href="#projects">
@@ -39,7 +39,13 @@ function Hero() {
         </div>
         <div className="hero-visual">
           <div className="hero-portrait-card">
-            <img src={MyPhoto} alt="Portrait of Łukasz Sulowski" />
+            <img
+              src={MyPhoto}
+              alt="Portrait of Łukasz Sulowski"
+              width="720"
+              height="1080"
+              fetchPriority="high"
+            />
             <div className="portrait-caption">
               <span>Łukasz Sulowski</span>
               <span>Infrastructure Engineer</span>
@@ -47,7 +53,7 @@ function Hero() {
           </div>
         </div>
       </div>
-      <a className="scroll-cue" href="#skills" aria-label="Scroll to skills">
+      <a className="scroll-cue" href="#about" aria-label="Scroll to about me">
         <span>Scroll to explore</span>
         <FaArrowDown aria-hidden="true" />
       </a>

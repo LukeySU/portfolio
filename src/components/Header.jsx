@@ -17,13 +17,11 @@ function Header() {
       <div className="header-inner">
         <a
           className="brand"
-          href="#about"
+          href="#home"
           onClick={closeMenu}
           aria-label="Łukasz Sulowski home"
         >
-          <span className="brand-mark" aria-hidden="true">
-            LS
-          </span>
+          <img className="brand-mark" src="/ls-mark.svg" alt="" />
           <span className="brand-name">Łukasz Sulowski</span>
         </a>
 
@@ -50,7 +48,7 @@ function Header() {
             </a>
           ))}
           <a className="nav-contact" href="#contact" onClick={closeMenu}>
-            Let’s talk <span aria-hidden="true">↗</span>
+            Let’s connect <span aria-hidden="true">↗</span>
           </a>
         </nav>
       </div>

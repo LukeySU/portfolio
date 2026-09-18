@@ -31,16 +31,10 @@
   text-decoration: none;
 }
 .brand-mark {
-  display: grid;
+  display: block;
   width: 34px;
   height: 34px;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--lime);
-  color: var(--ink);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: -0.05em;
+  flex: 0 0 34px;
 }
 .nav {
   display: flex;
@@ -54,10 +48,36 @@
   text-decoration: none;
   transition:
     color 0.2s ease,
-    background 0.2s ease;
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 .nav a:hover {
   color: var(--lime);
+}
+.nav a:not(.nav-contact) {
+  position: relative;
+}
+.nav a:not(.nav-contact)::after {
+  position: absolute;
+  right: 0;
+  bottom: -8px;
+  left: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--lime);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.2s ease;
+}
+.nav a:not(.nav-contact):hover {
+  transform: translateY(-2px);
+}
+.nav a:not(.nav-contact):hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 .nav .nav-contact {
   display: inline-flex;
@@ -71,9 +91,11 @@
   color: #101712 !important;
 }
 .nav .nav-contact:hover {
-  border-color: #e5ff9b;
-  background: #e5ff9b;
-  color: #101712 !important;
+  transform: translateY(-2px);
+  border-color: var(--lime);
+  background: var(--ink);
+  box-shadow: 0 10px 26px rgba(213, 251, 89, 0.2);
+  color: var(--lime) !important;
 }
 .nav-contact span {
   font-size: 1.1rem;
@@ -98,6 +120,7 @@
   .brand-mark {
     width: 32px;
     height: 32px;
+    flex-basis: 32px;
   }
   .menu-toggle {
     position: relative;
@@ -158,6 +181,13 @@
   .nav a {
     padding: 13px 2px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .nav a:not(.nav-contact)::after {
+    display: none;
+  }
+  .nav a:not(.nav-contact):hover {
+    transform: none;
+    background: rgba(213, 251, 89, 0.08);
   }
   .nav .nav-contact {
     justify-content: space-between;
