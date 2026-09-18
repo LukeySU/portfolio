@@ -30,11 +30,11 @@ const skillsGroups = [
       { name: "ESXi", icon: <FaServer /> },
       { name: "Proxmox VE", icon: <FaServer /> },
       { name: "Hyper-V", icon: <FaServer /> },
-      { name: "Veeam Backup & Recovery", icon: <FaShieldAlt /> },
+      { name: "Veeam Backup & Replication", icon: <FaShieldAlt /> },
     ],
   },
   {
-    title: "Cloud & Platform",
+    title: "Cloud & Platforms",
     skills: [
       { name: "Microsoft Azure", icon: <FaCloud /> },
       { name: "AWS", icon: <FaAws /> },
@@ -44,7 +44,7 @@ const skillsGroups = [
     ],
   },
   {
-    title: "Systems & Network",
+    title: "Systems & Networking",
     skills: [
       { name: "Linux: SUSE, Debian", icon: <FaLinux /> },
       { name: "Windows Server", icon: <FaWindows /> },
@@ -52,7 +52,7 @@ const skillsGroups = [
       { name: "Group Policy (GPO)", icon: <FaWindows /> },
       { name: "DNS", icon: <FaNetworkWired /> },
       { name: "IIS", icon: <FaServer /> },
-      { name: "TCP/IP, VPN & Firewall", icon: <FaNetworkWired /> },
+      { name: "TCP/IP, VPNs & Firewalls", icon: <FaNetworkWired /> },
     ],
   },
   {
@@ -69,11 +69,10 @@ const skillsGroups = [
     ],
   },
   {
-    title: "Observability & Network",
+    title: "Observability & Operations",
     skills: [
       { name: "Zabbix", icon: <FaChartLine /> },
       { name: "Grafana", icon: <FaChartLine /> },
-      { name: "Elastic", icon: <FaBell /> },
       { name: "LibreNMS", icon: <FaChartLine /> },
       { name: "Datadog", icon: <FaChartLine /> },
       { name: "Alerting & incident response", icon: <FaBell /> },
@@ -90,7 +89,7 @@ const skillsGroups = [
       { name: "CSS", icon: <FaCss3Alt /> },
       { name: "Responsive Design", icon: <FaCode /> },
       { name: "Python", icon: <FaPython /> },
-      { name: "Bash & Shell", icon: <FaTerminal /> },
+      { name: "Bash / Shell scripting", icon: <FaTerminal /> },
       { name: "SQL", icon: <FaCode /> },
     ],
   },
@@ -102,11 +101,11 @@ function Skills() {
       <div className="section-heading">
         <p className="section-kicker">What I work with</p>
         <h2>
-          Tools for building <span>what lasts.</span>
+          Tools for systems <span>that last.</span>
         </h2>
         <p className="section-intro">
-          Infrastructure administration, cloud platforms, automation,
-          observability, and frontend development.
+          Hands-on experience across infrastructure, cloud platforms,
+          automation, observability, and software development.
         </p>
       </div>
       <div className="skills-groups-container">

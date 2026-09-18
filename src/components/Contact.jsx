@@ -12,8 +12,8 @@ function Contact() {
             Let’s build something <span>reliable.</span>
           </h2>
           <p>
-            I’m always glad to talk about infrastructure, automation, and good
-            engineering.
+            I’m always open to discussing infrastructure, automation,
+            reliability, and new opportunities.
           </p>
         </div>
         <a className="contact-email" href="mailto:lukasz.sulowski@outlook.pl">

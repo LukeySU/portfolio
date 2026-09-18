@@ -10,7 +10,7 @@ const projects = [
     category: "FRONTEND · SRE",
     title: "Portfolio Website",
     description:
-      "A responsive React portfolio with a GitHub Actions deployment pipeline, uptime monitoring, and Sentry error tracking.",
+      "A responsive React portfolio delivered through GitHub Actions, with health checks, uptime monitoring, and Sentry-based error tracking.",
     tags: ["React", "CI/CD", "Sentry"],
     link: "https://github.com/LukeySU/portfolio",
     image: portoImg,
@@ -21,7 +21,7 @@ const projects = [
     category: "PYTHON · DATA",
     title: "Weather Forecast App",
     description:
-      "A Streamlit weather dashboard using live forecast data, with dynamic backgrounds and a five-day outlook.",
+      "A Streamlit dashboard that retrieves live weather data and presents a five-day forecast with condition-based visuals.",
     tags: ["Python", "Streamlit", "OpenWeatherMap"],
     image: appImg,
     imageAlt: "Weather forecast dashboard showing a five-day forecast",
@@ -39,8 +39,8 @@ function Projects() {
           </h2>
         </div>
         <p>
-          Small projects, practical ideas, and a focus on making things work
-          reliably.
+          Practical projects combining automation, observability, and
+          thoughtful engineering.
         </p>
       </div>
       <div className="projects-grid">

@@ -16,11 +16,11 @@ function Hero() {
           <h1>
             Reliable systems.
             <br />
-            <span>Room to build.</span>
+            <span>Built for growth.</span>
           </h1>
           <p className="hero-description">
-            I design and maintain dependable infrastructure, automate the
-            repetitive work, and help teams ship with confidence.
+            I build and maintain dependable infrastructure, automate
+            repetitive work, and help teams deliver safely and with confidence.
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href="#projects">
