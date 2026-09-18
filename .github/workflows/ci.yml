@@ -89,6 +89,7 @@ jobs:
       - name: Deploy to Netlify with functions
         run: |
           netlify deploy --prod \
+            --site="$NETLIFY_SITE_ID" \
             --dir=dist \
             --functions=netlify/functions \
             --message "CI deploy from commit ${{ github.sha }}"

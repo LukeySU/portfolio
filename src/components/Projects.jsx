@@ -1,6 +1,6 @@
 import React from "react";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
-import portoImg from "../assets/porto.png";
+import portoImg from "../assets/nowe-port.png";
 import appImg from "../assets/app.png";
 import "../styles/Projects.css";
 
