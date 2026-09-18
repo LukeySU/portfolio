@@ -23,11 +23,11 @@ function Hero() {
             teams down.
           </p>
           <div className="hero-actions">
-            <a className="button button-primary" href="#projects">
-              Explore my work <FaArrowRight aria-hidden="true" />
+            <a className="button button-primary" href="#experience">
+              View experience <FaArrowRight aria-hidden="true" />
             </a>
-            <a className="button button-quiet" href="#contact">
-              Get in touch <FaArrowDown aria-hidden="true" />
+            <a className="button button-quiet" href="#projects">
+              See projects <FaArrowDown aria-hidden="true" />
             </a>
           </div>
           <div className="hero-focus">
