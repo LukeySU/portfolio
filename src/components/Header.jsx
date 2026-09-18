@@ -1,40 +1,45 @@
 import React, { useState } from "react";
-import logoImg from "../assets/ls4.png";
 import "../styles/Header.css";
+
+const links = [
+  { href: "#about", label: "About" },
+  { href: "#skills", label: "Expertise" },
+  { href: "#projects", label: "Projects" },
+];
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <header className="header">
       <div className="header-inner">
-        <div className="logo-container">
-          <a href="/">
-            <img src={logoImg} alt="Logo" className="logo-img" />
-          </a>
-        </div>
+        <a className="brand" href="#about" onClick={closeMenu} aria-label="Łukasz Sulowski home">
+          <span className="brand-mark" aria-hidden="true">LS</span>
+          <span className="brand-name">Łukasz Sulowski</span>
+        </a>
 
-        <nav className={`nav ${menuOpen ? "show" : ""}`}>
-          <a href="#about" onClick={() => setMenuOpen(false)}>About Me</a>
-          <a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a>
-          <a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a>
-          <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
-        </nav>
-
-        <div
-          className={`hamburger ${menuOpen ? "open" : ""}`}
-          onClick={toggleMenu}
+        <button
+          className={`menu-toggle ${menuOpen ? "open" : ""}`}
+          type="button"
+          aria-label={menuOpen ? "Close navigation" : "Open navigation"}
+          aria-expanded={menuOpen}
+          aria-controls="primary-navigation"
+          onClick={() => setMenuOpen((open) => !open)}
         >
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+          <span /><span />
+        </button>
+
+        <nav id="primary-navigation" className={`nav ${menuOpen ? "show" : ""}`} aria-label="Main navigation">
+          {links.map((link) => (
+            <a href={link.href} key={link.href} onClick={closeMenu}>{link.label}</a>
+          ))}
+          <a className="nav-contact" href="#contact" onClick={closeMenu}>Let’s talk <span aria-hidden="true">↗</span></a>
+        </nav>
       </div>
     </header>
   );
 }
 
 export default Header;
-

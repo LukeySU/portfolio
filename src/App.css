@@ -1,16 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Satoshi:wght@300;400;500;600;700&display=swap');
 .app {
-  font-family: 'Figtree', sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  background: transparent;
-  color: #111827;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
+  min-height: 100vh;
+  overflow: clip;
+  background:
+    radial-gradient(900px 680px at 97% 8%, rgba(164, 133, 255, .19), transparent 68%),
+    radial-gradient(760px 650px at -8% 42%, rgba(213, 251, 89, .13), transparent 70%),
+    radial-gradient(850px 720px at 102% 70%, rgba(81, 196, 232, .14), transparent 70%),
+    radial-gradient(680px 600px at 32% 93%, rgba(255, 132, 104, .1), transparent 72%),
+    #101712;
+  background-attachment: fixed;
+  color: var(--paper);
 }
 
-
+main { display: block; }

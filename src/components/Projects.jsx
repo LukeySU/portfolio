@@ -1,55 +1,61 @@
 import React from "react";
-import "../styles/Projects.css";
+import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import portoImg from "../assets/porto.png";
 import appImg from "../assets/app.png";
+import "../styles/Projects.css";
 
 const projects = [
   {
+    number: "01",
+    category: "FRONTEND · SRE",
     title: "Portfolio Website",
-    description:
-      "A personal portfolio website built with React and CSS, fully responsive. CI/CD pipeline with GitHub Actions and hosted on Netlify. Monitoring uptime with Shields.io and Sentry.",
-    link: "https://your-portfolio.netlify.app",
-    image: portoImg
+    description: "A responsive React portfolio with a GitHub Actions deployment pipeline, uptime monitoring, and Sentry error tracking.",
+    tags: ["React", "CI/CD", "Sentry"],
+    link: "https://github.com/LukeySU/portfolio",
+    image: portoImg,
+    imageAlt: "Screenshot of the portfolio website",
   },
   {
-    title: "Weather App (Streamlit)",
-    description:
-      "Weather forecast app built with Streamlit and OpenWeatherMap API. Dynamic backgrounds, animations, and SRE-inspired metrics. Hosted on Streamlit Cloud.",
-    link: "https://your-weather-app.streamlit.app",
-    image: appImg
+    number: "02",
+    category: "PYTHON · DATA",
+    title: "Weather Forecast App",
+    description: "A Streamlit weather dashboard using live forecast data, with dynamic backgrounds and a five-day outlook.",
+    tags: ["Python", "Streamlit", "OpenWeatherMap"],
+    image: appImg,
+    imageAlt: "Weather forecast dashboard showing a five-day forecast",
   },
-  // {
-  //   title: "Todo List",
-  //   description:
-  //     "A simple Todo list with CRUD functionality and local storage.",
-  //   link: "#",
-  //   image: appImg
-  // }
 ];
 
 function Projects() {
   return (
     <section id="projects" className="projects">
-      <h3>Projects</h3>
+      <div className="projects-heading">
+        <div>
+          <p className="section-kicker">Selected work</p>
+          <h2>Built to be <span>useful.</span></h2>
+        </div>
+        <p>Small projects, practical ideas, and a focus on making things work reliably.</p>
+      </div>
       <div className="projects-grid">
-        {projects.map((proj, i) => (
-          <div key={i} className="project-card">
-            <img
-              src={proj.image}
-              alt={proj.title}
-              className="project-image"
-            />
-            <h4>{proj.title}</h4>
-            <p>{proj.description}</p>
-            <a
-              href={proj.link}
-              className="project-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Project
+        {projects.map((project) => (
+          <article key={project.number} className="project-card">
+            <a className="project-visual" href={project.link || "#contact"} target={project.link ? "_blank" : undefined} rel={project.link ? "noreferrer" : undefined} aria-label={project.link ? `View ${project.title} on GitHub` : `Contact me about ${project.title}`}>
+              <img src={project.image} alt={project.imageAlt} loading="lazy" />
+              <span className="project-number">{project.number}</span>
+              <span className="project-arrow"><FaArrowUpRightFromSquare aria-hidden="true" /></span>
             </a>
-          </div>
+            <div className="project-copy">
+              <p className="project-category">{project.category}</p>
+              <h3>{project.title}</h3>
+              <p className="project-description">{project.description}</p>
+              <div className="project-tags" aria-label="Technologies">
+                {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
+              </div>
+              <a className="project-link" href={project.link || "#contact"} target={project.link ? "_blank" : undefined} rel={project.link ? "noreferrer" : undefined}>
+                {project.link ? "View source" : "Ask about this project"} <FaArrowUpRightFromSquare aria-hidden="true" />
+              </a>
+            </div>
+          </article>
         ))}
       </div>
     </section>

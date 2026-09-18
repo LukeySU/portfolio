@@ -1,60 +1,82 @@
 import React from "react";
 import { 
-  FaDocker, FaPython, FaJs, FaHtml5, FaCss3Alt, FaReact, 
-  FaAws, FaGitAlt, FaLinux, FaCode, FaServer, FaTools, FaNetworkWired, FaShieldAlt, FaBell, FaChartLine, FaTerminal
+  FaDocker, FaPython, FaJs, FaHtml5, FaCss3Alt, FaReact, FaAws,
+  FaLinux, FaCode, FaServer, FaTools, FaNetworkWired, FaShieldAlt,
+  FaBell, FaChartLine, FaTerminal, FaWindows, FaCloud
 } from "react-icons/fa";
 import "../styles/Skills.css";
 
 const skillsGroups = [
   {
-    title: "Containers & Automation",
+    title: "Virtualization & Backup",
     skills: [
+      { name: "VMware vSphere", icon: <FaServer /> },
+      { name: "vCenter", icon: <FaServer /> },
+      { name: "ESXi", icon: <FaServer /> },
+      { name: "Proxmox VE", icon: <FaServer /> },
+      { name: "Hyper-V", icon: <FaServer /> },
+      { name: "Veeam Backup & Recovery", icon: <FaShieldAlt /> }
+    ]
+  },
+  {
+    title: "Cloud & Platform",
+    skills: [
+      { name: "Microsoft Azure", icon: <FaCloud /> },
+      { name: "AWS", icon: <FaAws /> },
+      { name: "IaaS / PaaS", icon: <FaCloud /> },
+      { name: "Azure networking", icon: <FaNetworkWired /> },
+      { name: "Cloud access & security", icon: <FaShieldAlt /> }
+    ]
+  },
+  {
+    title: "Systems & Network",
+    skills: [
+      { name: "Linux: SUSE, Debian", icon: <FaLinux /> },
+      { name: "Windows Server", icon: <FaWindows /> },
+      { name: "Active Directory", icon: <FaWindows /> },
+      { name: "Group Policy (GPO)", icon: <FaWindows /> },
+      { name: "DNS", icon: <FaNetworkWired /> },
+      { name: "IIS", icon: <FaServer /> },
+      { name: "TCP/IP, VPN & Firewall", icon: <FaNetworkWired /> }
+    ]
+  },
+  {
+    title: "Automation & Delivery",
+    skills: [
+      { name: "Terraform", icon: <FaCode /> },
       { name: "Docker", icon: <FaDocker /> },
       { name: "Ansible", icon: <FaCode /> },
       { name: "Kubernetes", icon: <FaCode /> },
-      { name: "Terraform", icon: <FaCode /> },
-      { name: "CI/CD", icon: <FaTools /> }
+      { name: "CI/CD", icon: <FaTools /> },
+      { name: "GitLab CI", icon: <FaTools /> },
+      { name: "Azure DevOps Pipelines", icon: <FaTools /> },
+      { name: "PowerShell", icon: <FaTerminal /> }
     ]
   },
   {
-    title: "Programming & Scripting",
+    title: "Observability & Network",
     skills: [
-      { name: "Python", icon: <FaPython /> },
-      { name: "JavaScript", icon: <FaJs /> },
-      { name: "SQL", icon: <FaCode /> },
-      { name: "Shell", icon: <FaTerminal/> },
-      { name: "Bash", icon: <FaTerminal/> }
+      { name: "Zabbix", icon: <FaChartLine /> },
+      { name: "Grafana", icon: <FaChartLine /> },
+      { name: "Elastic", icon: <FaBell /> },
+      { name: "LibreNMS", icon: <FaChartLine /> },
+      { name: "Datadog", icon: <FaChartLine /> },
+      { name: "Alerting & incident response", icon: <FaBell /> },
+      { name: "Performance monitoring", icon: <FaChartLine /> }
     ]
   },
   {
-    title: "Frontend",
+    title: "Development & Scripting",
     skills: [
       { name: "React", icon: <FaReact /> },
-      { name: "CSS", icon: <FaCss3Alt /> },
-      { name: "HTML", icon: <FaHtml5 /> },
-      { name: "Responsive Design", icon: <FaCode /> },
       { name: "Next.js", icon: <FaReact /> },
-    ]
-  },
-  {
-    title: "Infrastructure",
-    skills: [
-      { name: "Server administration", icon: <FaLinux /> },
-      { name: "Cloud services (AWS, GCP)", icon: <FaAws /> },
-      { name: "Virtualization (VMware, Hyper-V)", icon: <FaServer /> },
-      { name: "Windows/Linux administration", icon: <FaLinux /> },
-      { name: "Networking", icon: <FaNetworkWired /> }
-    ]
-  },
-  {
-    title: "Monitoring",
-    skills: [
-    { name: "Performance & Metrics Monitoring", icon: <FaChartLine /> },
-    { name: "Alerting & Incident Response", icon: <FaBell /> },
-    { name: "Network & System Reliability", icon: <FaNetworkWired /> },
-    { name: "Cloud Security & Access Control", icon: <FaShieldAlt /> },
-    
-    
+      { name: "JavaScript", icon: <FaJs /> },
+      { name: "HTML", icon: <FaHtml5 /> },
+      { name: "CSS", icon: <FaCss3Alt /> },
+      { name: "Responsive Design", icon: <FaCode /> },
+      { name: "Python", icon: <FaPython /> },
+      { name: "Bash & Shell", icon: <FaTerminal /> },
+      { name: "SQL", icon: <FaCode /> }
     ]
   }
 ];
@@ -62,11 +84,15 @@ const skillsGroups = [
 function Skills() {
   return (
     <section id="skills" className="skills-section">
-      <h3>Skills & Technologies</h3>
+      <div className="section-heading">
+        <p className="section-kicker">What I work with</p>
+        <h2>Tools for building <span>what lasts.</span></h2>
+        <p className="section-intro">Infrastructure administration, cloud platforms, automation, observability, and frontend development.</p>
+      </div>
       <div className="skills-groups-container">
         {skillsGroups.map((group, gIndex) => (
-          <div key={gIndex} className="skills-group">
-            <h4>{group.title}</h4>
+          <article key={gIndex} className="skills-group">
+            <h3><span className="group-index">0{gIndex + 1}</span>{group.title}</h3>
             <div className="skills-cards">
               {group.skills.map((skill, i) => (
                 <div key={i} className="skill-card">
@@ -75,7 +101,7 @@ function Skills() {
                 </div>
               ))}
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </section>
