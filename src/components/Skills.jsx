@@ -1,8 +1,23 @@
 import React from "react";
-import { 
-  FaDocker, FaPython, FaJs, FaHtml5, FaCss3Alt, FaReact, FaAws,
-  FaLinux, FaCode, FaServer, FaTools, FaNetworkWired, FaShieldAlt,
-  FaBell, FaChartLine, FaTerminal, FaWindows, FaCloud
+import {
+  FaDocker,
+  FaPython,
+  FaJs,
+  FaHtml5,
+  FaCss3Alt,
+  FaReact,
+  FaAws,
+  FaLinux,
+  FaCode,
+  FaServer,
+  FaTools,
+  FaNetworkWired,
+  FaShieldAlt,
+  FaBell,
+  FaChartLine,
+  FaTerminal,
+  FaWindows,
+  FaCloud,
 } from "react-icons/fa";
 import "../styles/Skills.css";
 
@@ -15,8 +30,8 @@ const skillsGroups = [
       { name: "ESXi", icon: <FaServer /> },
       { name: "Proxmox VE", icon: <FaServer /> },
       { name: "Hyper-V", icon: <FaServer /> },
-      { name: "Veeam Backup & Recovery", icon: <FaShieldAlt /> }
-    ]
+      { name: "Veeam Backup & Recovery", icon: <FaShieldAlt /> },
+    ],
   },
   {
     title: "Cloud & Platform",
@@ -25,8 +40,8 @@ const skillsGroups = [
       { name: "AWS", icon: <FaAws /> },
       { name: "IaaS / PaaS", icon: <FaCloud /> },
       { name: "Azure networking", icon: <FaNetworkWired /> },
-      { name: "Cloud access & security", icon: <FaShieldAlt /> }
-    ]
+      { name: "Cloud access & security", icon: <FaShieldAlt /> },
+    ],
   },
   {
     title: "Systems & Network",
@@ -37,8 +52,8 @@ const skillsGroups = [
       { name: "Group Policy (GPO)", icon: <FaWindows /> },
       { name: "DNS", icon: <FaNetworkWired /> },
       { name: "IIS", icon: <FaServer /> },
-      { name: "TCP/IP, VPN & Firewall", icon: <FaNetworkWired /> }
-    ]
+      { name: "TCP/IP, VPN & Firewall", icon: <FaNetworkWired /> },
+    ],
   },
   {
     title: "Automation & Delivery",
@@ -50,8 +65,8 @@ const skillsGroups = [
       { name: "CI/CD", icon: <FaTools /> },
       { name: "GitLab CI", icon: <FaTools /> },
       { name: "Azure DevOps Pipelines", icon: <FaTools /> },
-      { name: "PowerShell", icon: <FaTerminal /> }
-    ]
+      { name: "PowerShell", icon: <FaTerminal /> },
+    ],
   },
   {
     title: "Observability & Network",
@@ -62,8 +77,8 @@ const skillsGroups = [
       { name: "LibreNMS", icon: <FaChartLine /> },
       { name: "Datadog", icon: <FaChartLine /> },
       { name: "Alerting & incident response", icon: <FaBell /> },
-      { name: "Performance monitoring", icon: <FaChartLine /> }
-    ]
+      { name: "Performance monitoring", icon: <FaChartLine /> },
+    ],
   },
   {
     title: "Development & Scripting",
@@ -76,9 +91,9 @@ const skillsGroups = [
       { name: "Responsive Design", icon: <FaCode /> },
       { name: "Python", icon: <FaPython /> },
       { name: "Bash & Shell", icon: <FaTerminal /> },
-      { name: "SQL", icon: <FaCode /> }
-    ]
-  }
+      { name: "SQL", icon: <FaCode /> },
+    ],
+  },
 ];
 
 function Skills() {
@@ -86,13 +101,21 @@ function Skills() {
     <section id="skills" className="skills-section">
       <div className="section-heading">
         <p className="section-kicker">What I work with</p>
-        <h2>Tools for building <span>what lasts.</span></h2>
-        <p className="section-intro">Infrastructure administration, cloud platforms, automation, observability, and frontend development.</p>
+        <h2>
+          Tools for building <span>what lasts.</span>
+        </h2>
+        <p className="section-intro">
+          Infrastructure administration, cloud platforms, automation,
+          observability, and frontend development.
+        </p>
       </div>
       <div className="skills-groups-container">
         {skillsGroups.map((group, gIndex) => (
           <article key={gIndex} className="skills-group">
-            <h3><span className="group-index">0{gIndex + 1}</span>{group.title}</h3>
+            <h3>
+              <span className="group-index">0{gIndex + 1}</span>
+              {group.title}
+            </h3>
             <div className="skills-cards">
               {group.skills.map((skill, i) => (
                 <div key={i} className="skill-card">
@@ -109,11 +132,3 @@ function Skills() {
 }
 
 export default Skills;
-
-
-
-
-
-
-
-

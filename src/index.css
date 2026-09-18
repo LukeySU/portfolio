@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
 
 :root {
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   color: #f4f4ec;
   background: #101712;
   font-synthesis: none;
@@ -19,7 +19,9 @@
   --line: rgba(255, 255, 255, 0.12);
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 html {
   min-width: 320px;
@@ -37,15 +39,29 @@ body {
   background: #101712;
 }
 
-#root { width: 100%; min-height: 100vh; }
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
 
-body, button, a { font-family: 'DM Sans', sans-serif; }
+body,
+button,
+a {
+  font-family: "DM Sans", sans-serif;
+}
 
-a { color: inherit; }
+a {
+  color: inherit;
+}
 
-button { color: inherit; }
+button {
+  color: inherit;
+}
 
-::selection { color: var(--ink); background: var(--lime); }
+::selection {
+  color: var(--ink);
+  background: var(--lime);
+}
 
 :focus-visible {
   outline: 3px solid var(--lime);
@@ -53,7 +69,9 @@ button { color: inherit; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     scroll-behavior: auto !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;

@@ -1,22 +1,111 @@
-.contact { padding: clamp(64px, 8vw, 100px) 7vw 42px; background: rgba(16,23,18,.16); }
-.contact-panel { display: flex; width: min(1240px, 100%); align-items: end; justify-content: space-between; gap: 38px; margin: 0 auto; padding: clamp(30px, 6vw, 72px); border-radius: 10px; background: var(--lime); color: var(--ink); }
-.contact-copy { max-width: 680px; }
-.contact-copy .section-kicker { margin-bottom: 15px; color: #58681f; }
-.contact-copy h2 { margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.4rem, 5vw, 4.4rem); font-weight: 600; letter-spacing: -.065em; line-height: 1.02; }
-.contact-copy h2 span { color: #58681f; }
-.contact-copy > p:last-child { max-width: 500px; margin: 18px 0 0; color: #3f4a2c; font-size: .98rem; line-height: 1.65; }
-.contact-email { display: inline-flex; min-width: 160px; min-height: 52px; align-items: center; justify-content: center; gap: 12px; padding: 0 18px; border: 1px solid var(--ink); border-radius: 5px; color: var(--ink); font-size: .88rem; font-weight: 700; text-decoration: none; transition: background .2s ease, color .2s ease; }
-.contact-email:hover { background: var(--ink); color: var(--lime); }
-.contact-socials { display: flex; width: min(1240px, 100%); justify-content: flex-end; gap: 28px; margin: 30px auto 0; }
-.contact-socials a { display: inline-flex; align-items: center; gap: 9px; color: #aeb8ac; font-size: .8rem; text-decoration: none; transition: color .2s ease; }
-.contact-socials a:hover { color: var(--lime); }
-.contact-socials a > svg { color: var(--lime); }
-.social-arrow { color: #778276; }
+.contact {
+  padding: clamp(64px, 8vw, 100px) 7vw 42px;
+  background: rgba(16, 23, 18, 0.16);
+}
+.contact-panel {
+  display: flex;
+  width: min(1240px, 100%);
+  align-items: end;
+  justify-content: space-between;
+  gap: 38px;
+  margin: 0 auto;
+  padding: clamp(30px, 6vw, 72px);
+  border-radius: 10px;
+  background: var(--lime);
+  color: var(--ink);
+}
+.contact-copy {
+  max-width: 680px;
+}
+.contact-copy .section-kicker {
+  margin-bottom: 15px;
+  color: #58681f;
+}
+.contact-copy h2 {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2.4rem, 5vw, 4.4rem);
+  font-weight: 600;
+  letter-spacing: -0.065em;
+  line-height: 1.02;
+}
+.contact-copy h2 span {
+  color: #58681f;
+}
+.contact-copy > p:last-child {
+  max-width: 500px;
+  margin: 18px 0 0;
+  color: #3f4a2c;
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+.contact-email {
+  display: inline-flex;
+  min-width: 160px;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 18px;
+  border: 1px solid var(--ink);
+  border-radius: 5px;
+  color: var(--ink);
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+.contact-email:hover {
+  background: var(--ink);
+  color: var(--lime);
+}
+.contact-socials {
+  display: flex;
+  width: min(1240px, 100%);
+  justify-content: flex-end;
+  gap: 28px;
+  margin: 30px auto 0;
+}
+.contact-socials a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #aeb8ac;
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.contact-socials a:hover {
+  color: var(--lime);
+}
+.contact-socials a > svg {
+  color: var(--lime);
+}
+.social-arrow {
+  color: #778276;
+}
 
 @media (max-width: 700px) {
-  .contact { padding: 70px 6vw 30px; }
-  .contact-panel { align-items: flex-start; flex-direction: column; gap: 24px; padding: 30px 24px; }
-  .contact-email { width: 100%; }
-  .contact-socials { justify-content: space-between; gap: 12px; }
-  .contact-socials a { gap: 7px; font-size: .76rem; }
+  .contact {
+    padding: 70px 6vw 30px;
+  }
+  .contact-panel {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 24px;
+    padding: 30px 24px;
+  }
+  .contact-email {
+    width: 100%;
+  }
+  .contact-socials {
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .contact-socials a {
+    gap: 7px;
+    font-size: 0.76rem;
+  }
 }

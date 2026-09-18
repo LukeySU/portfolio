@@ -15,8 +15,15 @@ function Header() {
   return (
     <header className="header">
       <div className="header-inner">
-        <a className="brand" href="#about" onClick={closeMenu} aria-label="Łukasz Sulowski home">
-          <span className="brand-mark" aria-hidden="true">LS</span>
+        <a
+          className="brand"
+          href="#about"
+          onClick={closeMenu}
+          aria-label="Łukasz Sulowski home"
+        >
+          <span className="brand-mark" aria-hidden="true">
+            LS
+          </span>
           <span className="brand-name">Łukasz Sulowski</span>
         </a>
 
@@ -28,14 +35,23 @@ function Header() {
           aria-controls="primary-navigation"
           onClick={() => setMenuOpen((open) => !open)}
         >
-          <span /><span />
+          <span />
+          <span />
         </button>
 
-        <nav id="primary-navigation" className={`nav ${menuOpen ? "show" : ""}`} aria-label="Main navigation">
+        <nav
+          id="primary-navigation"
+          className={`nav ${menuOpen ? "show" : ""}`}
+          aria-label="Main navigation"
+        >
           {links.map((link) => (
-            <a href={link.href} key={link.href} onClick={closeMenu}>{link.label}</a>
+            <a href={link.href} key={link.href} onClick={closeMenu}>
+              {link.label}
+            </a>
           ))}
-          <a className="nav-contact" href="#contact" onClick={closeMenu}>Let’s talk <span aria-hidden="true">↗</span></a>
+          <a className="nav-contact" href="#contact" onClick={closeMenu}>
+            Let’s talk <span aria-hidden="true">↗</span>
+          </a>
         </nav>
       </div>
     </header>
