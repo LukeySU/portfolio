@@ -40,6 +40,7 @@ const projects = [
     description:
       "A Streamlit dashboard that retrieves live weather data and presents a five-day forecast with condition-based visuals.",
     tags: ["Python", "Streamlit", "OpenWeatherMap"],
+    link: "https://github.com/LukeySU/weather-app-streamlit",
     image: appImg,
     imageWidth: 1400,
     imageHeight: 543,
