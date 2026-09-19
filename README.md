@@ -11,6 +11,7 @@
 
 ## 🚀 CI/CD
 [![CI Status](https://github.com/LukeySU/portfolio/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/LukeySU/portfolio/actions/workflows/ci.yml)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4ca8cd1e-c102-49fa-b577-f2e7d1add33b/deploy-status)](https://app.netlify.com/projects/lukasz-sulowski/deploys)
 
 ---
 
