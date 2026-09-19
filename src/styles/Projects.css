@@ -60,8 +60,8 @@
   grid-template-columns: minmax(0, 1.22fr) minmax(340px, 0.78fr);
 }
 .project-card.featured .project-visual {
-  height: 100%;
-  min-height: 430px;
+  height: auto;
+  min-height: 0;
 }
 .project-card.featured .project-copy {
   display: flex;
@@ -75,9 +75,10 @@
 .project-visual {
   position: relative;
   display: block;
-  height: clamp(230px, 29vw, 370px);
+  height: auto;
+  aspect-ratio: 1400 / 760;
   overflow: hidden;
-  background: #29392e;
+  background: #101712;
 }
 .project-visual::after {
   position: absolute;
@@ -94,8 +95,8 @@
 .project-visual img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  object-fit: contain;
+  object-position: center;
   transition: transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 .project-card:hover .project-visual img {
@@ -204,7 +205,7 @@
     grid-column: 1;
   }
   .project-card.featured .project-visual {
-    height: clamp(240px, 58vw, 380px);
+    height: auto;
     min-height: 0;
   }
   .project-card.featured .project-copy {
@@ -212,7 +213,7 @@
     padding: 26px 27px 28px;
   }
   .project-visual {
-    height: clamp(240px, 58vw, 380px);
+    height: auto;
   }
 }
 

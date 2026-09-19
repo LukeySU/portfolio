@@ -1,7 +1,7 @@
 import React from "react";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
-import portoImg from "../assets/nowe-port.jpg";
-import appImg from "../assets/app.jpg";
+import portoImg from "../assets/portfolio-current.jpg";
+import appImg from "../assets/weather-app-preview.jpg";
 import reliabilityImg from "../assets/reliability-lab.svg";
 import "../styles/Projects.css";
 
@@ -30,7 +30,7 @@ const projects = [
     link: "https://github.com/LukeySU/portfolio",
     image: portoImg,
     imageWidth: 1400,
-    imageHeight: 644,
+    imageHeight: 760,
     imageAlt: "Screenshot of the portfolio website",
   },
   {
@@ -43,7 +43,7 @@ const projects = [
     link: "https://github.com/LukeySU/weather-app-streamlit",
     image: appImg,
     imageWidth: 1400,
-    imageHeight: 543,
+    imageHeight: 760,
     imageAlt: "Weather forecast dashboard showing a five-day forecast",
   },
 ];
