@@ -2,11 +2,26 @@ import React from "react";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import portoImg from "../assets/nowe-port.jpg";
 import appImg from "../assets/app.jpg";
+import reliabilityImg from "../assets/reliability-lab.svg";
 import "../styles/Projects.css";
 
 const projects = [
   {
     number: "01",
+    category: "KUBERNETES · OBSERVABILITY",
+    title: "Kubernetes Reliability Lab",
+    description:
+      "A local Kubernetes environment with repeatable Helm deployments, health checks, monitoring, alerting, and automated recovery validation.",
+    tags: ["Kubernetes", "Helm", "Prometheus", "Grafana", "GitHub Actions"],
+    link: "https://github.com/LukeySU/kubernetes-reliability-lab",
+    image: reliabilityImg,
+    imageWidth: 1400,
+    imageHeight: 760,
+    imageAlt: "Architecture of the Kubernetes reliability lab",
+    featured: true,
+  },
+  {
+    number: "02",
     category: "FRONTEND · SRE",
     title: "Portfolio Website",
     description:
@@ -19,7 +34,7 @@ const projects = [
     imageAlt: "Screenshot of the portfolio website",
   },
   {
-    number: "02",
+    number: "03",
     category: "PYTHON · DATA",
     title: "Weather Forecast App",
     description:
@@ -49,7 +64,10 @@ function Projects() {
       </div>
       <div className="projects-grid">
         {projects.map((project) => (
-          <article key={project.number} className="project-card">
+          <article
+            key={project.number}
+            className={`project-card ${project.featured ? "featured" : ""}`}
+          >
             <a
               className="project-visual"
               href={project.link || "#contact"}
@@ -69,13 +87,15 @@ function Projects() {
                 loading="lazy"
                 decoding="async"
               />
-              <span className="project-number">{project.number}</span>
               <span className="project-arrow">
                 <FaArrowUpRightFromSquare aria-hidden="true" />
               </span>
             </a>
             <div className="project-copy">
-              <p className="project-category">{project.category}</p>
+              <div className="project-copy-meta">
+                <p className="project-category">{project.category}</p>
+                <span className="project-number">{project.number}</span>
+              </div>
               <h3>{project.title}</h3>
               <p className="project-description">{project.description}</p>
               <div className="project-tags" aria-label="Technologies">

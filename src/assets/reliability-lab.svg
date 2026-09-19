@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760" role="img" aria-labelledby="title desc">
+  <title id="title">Kubernetes Reliability Lab architecture</title>
+  <desc id="desc">Two application pods connected to Prometheus, Grafana, and Alertmanager in a local Kubernetes cluster.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#101712"/><stop offset="1" stop-color="#1a2b20"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="82%" cy="8%" r="80%">
+      <stop offset="0" stop-color="#8e74ff" stop-opacity=".34"/><stop offset="1" stop-color="#101712" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#fff" stroke-opacity=".035"/>
+    </pattern>
+    <filter id="shadow"><feDropShadow dy="18" stdDeviation="20" flood-color="#050b07" flood-opacity=".5"/></filter>
+  </defs>
+  <rect width="1400" height="760" fill="url(#bg)"/><rect width="1400" height="760" fill="url(#glow)"/><rect width="1400" height="760" fill="url(#grid)"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="72" y="82" fill="#d5fb59" font-size="17" font-weight="700" letter-spacing="4">LOCAL RELIABILITY LAB</text>
+    <text x="72" y="133" fill="#f4f4ec" font-size="38" font-weight="700">Observable. Resilient. Reproducible.</text>
+    <text x="72" y="168" fill="#aeb8ad" font-size="18">A production-minded Kubernetes environment running entirely locally.</text>
+  </g>
+  <g filter="url(#shadow)" font-family="Arial, Helvetica, sans-serif">
+    <rect x="70" y="230" width="830" height="450" rx="22" fill="#142219" stroke="#d5fb59" stroke-opacity=".33" stroke-width="2"/>
+    <rect x="96" y="258" width="178" height="38" rx="19" fill="#d5fb59" fill-opacity=".1" stroke="#d5fb59" stroke-opacity=".42"/>
+    <circle cx="119" cy="277" r="6" fill="#d5fb59"/><text x="137" y="283" fill="#d5fb59" font-size="15" font-weight="700">KIND CLUSTER</text>
+    <g stroke="#d5fb59" stroke-opacity=".38" stroke-width="2" fill="none"><path d="M258 454H348M542 404H627M542 510H627M598 404V510"/></g>
+    <g>
+      <rect x="112" y="388" width="146" height="132" rx="14" fill="#1e3225" stroke="#fff" stroke-opacity=".16"/>
+      <path d="M159 425h52l18 29-18 29h-52l-18-29z" fill="#d5fb59" fill-opacity=".12" stroke="#d5fb59"/><circle cx="185" cy="454" r="12" fill="none" stroke="#d5fb59" stroke-width="3"/>
+      <text x="185" y="551" fill="#f4f4ec" font-size="16" text-anchor="middle" font-weight="700">SERVICE</text>
+    </g>
+    <g>
+      <rect x="348" y="340" width="194" height="128" rx="14" fill="#1e3225" stroke="#51c4e8" stroke-opacity=".55"/>
+      <circle cx="382" cy="373" r="9" fill="#51c4e8"/><text x="405" y="380" fill="#f4f4ec" font-size="18" font-weight="700">APP POD 01</text>
+      <text x="382" y="419" fill="#aeb8ad" font-size="14">READY</text><rect x="451" y="407" width="62" height="22" rx="11" fill="#d5fb59" fill-opacity=".12"/><text x="482" y="423" fill="#d5fb59" font-size="11" text-anchor="middle" font-weight="700">HEALTHY</text>
+    </g>
+    <g>
+      <rect x="348" y="486" width="194" height="128" rx="14" fill="#1e3225" stroke="#51c4e8" stroke-opacity=".55"/>
+      <circle cx="382" cy="519" r="9" fill="#51c4e8"/><text x="405" y="526" fill="#f4f4ec" font-size="18" font-weight="700">APP POD 02</text>
+      <text x="382" y="565" fill="#aeb8ad" font-size="14">READY</text><rect x="451" y="553" width="62" height="22" rx="11" fill="#d5fb59" fill-opacity=".12"/><text x="482" y="569" fill="#d5fb59" font-size="11" text-anchor="middle" font-weight="700">HEALTHY</text>
+    </g>
+    <g>
+      <rect x="627" y="368" width="224" height="178" rx="16" fill="#1a2a20" stroke="#fff" stroke-opacity=".15"/>
+      <text x="661" y="409" fill="#f4f4ec" font-size="20" font-weight="700">HELM RELEASE</text><text x="661" y="443" fill="#aeb8ad" font-size="14">Probes · Resources · PDB</text><text x="661" y="474" fill="#aeb8ad" font-size="14">ServiceMonitor · Alerts</text>
+      <path d="M661 504h154" stroke="#fff" stroke-opacity=".12"/><text x="661" y="527" fill="#d5fb59" font-family="monospace" font-size="13">2/2 replicas available</text>
+    </g>
+  </g>
+  <g filter="url(#shadow)" font-family="Arial, Helvetica, sans-serif">
+    <rect x="952" y="230" width="378" height="450" rx="22" fill="#17261c" stroke="#fff" stroke-opacity=".13"/><text x="990" y="282" fill="#f4f4ec" font-size="21" font-weight="700">OBSERVABILITY</text>
+    <g><rect x="990" y="323" width="302" height="84" rx="13" fill="#202f25" stroke="#ff8c42" stroke-opacity=".5"/><circle cx="1028" cy="365" r="17" fill="none" stroke="#ff8c42" stroke-width="5"/><text x="1065" y="360" fill="#f4f4ec" font-size="18" font-weight="700">Prometheus</text><text x="1065" y="383" fill="#aeb8ad" font-size="13">metrics &amp; alert rules</text></g>
+    <g><rect x="990" y="430" width="302" height="84" rx="13" fill="#202f25" stroke="#f5a623" stroke-opacity=".5"/><path d="M1012 480c12-31 22-32 38-20 14 10 9 24-4 28-13 5-24-1-34-8z" fill="none" stroke="#f5a623" stroke-width="4"/><text x="1065" y="467" fill="#f4f4ec" font-size="18" font-weight="700">Grafana</text><text x="1065" y="490" fill="#aeb8ad" font-size="13">live reliability dashboard</text></g>
+    <g><rect x="990" y="537" width="302" height="84" rx="13" fill="#202f25" stroke="#d5fb59" stroke-opacity=".5"/><path d="M1029 558c-10 0-18 8-18 18v13l-7 9h50l-7-9v-13c0-10-8-18-18-18z" fill="none" stroke="#d5fb59" stroke-width="3"/><text x="1065" y="574" fill="#f4f4ec" font-size="18" font-weight="700">Alertmanager</text><text x="1065" y="597" fill="#aeb8ad" font-size="13">actionable incident signals</text></g>
+  </g>
+</svg>
