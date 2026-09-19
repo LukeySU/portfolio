@@ -120,7 +120,8 @@
     transform 0.2s ease,
     background 0.2s ease,
     color 0.2s ease,
-    border-color 0.2s ease;
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .button:hover {
@@ -131,7 +132,11 @@
   color: var(--ink);
 }
 .button-primary:hover {
-  background: #e3ff8a;
+  transform: translateY(-2px);
+  border-color: var(--lime);
+  background: var(--ink);
+  box-shadow: 0 10px 26px rgba(213, 251, 89, 0.2);
+  color: var(--lime);
 }
 .button-quiet {
   border-color: rgba(255, 255, 255, 0.38);
