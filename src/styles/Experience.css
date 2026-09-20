@@ -61,6 +61,18 @@
   content: "";
 }
 
+.experience-timeline::after {
+  position: absolute;
+  top: 18px;
+  left: 19px;
+  width: 1px;
+  height: var(--timeline-progress, 0%);
+  max-height: calc(100% - 36px);
+  background: var(--lime);
+  box-shadow: 0 0 12px rgba(213, 251, 89, 0.5);
+  content: "";
+}
+
 .experience-item {
   position: relative;
   display: grid;
@@ -213,6 +225,7 @@
   }
 
   .experience-timeline::before,
+  .experience-timeline::after,
   .experience-marker {
     display: none;
   }

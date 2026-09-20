@@ -11,14 +11,18 @@ function About() {
   return (
     <section id="about" className="about">
       <div className="about-inner">
-        <div className="about-heading">
+        <div className="about-heading" data-reveal>
           <p className="section-kicker">About me</p>
           <h2>
             Infrastructure with a <span>practical mindset.</span>
           </h2>
         </div>
 
-        <div className="about-copy">
+        <div
+          className="about-copy"
+          data-reveal
+          style={{ "--reveal-delay": "100ms" }}
+        >
           <p className="about-lead">
             I’m an infrastructure engineer focused on building and maintaining
             stable, secure, and observable environments.

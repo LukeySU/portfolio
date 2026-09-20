@@ -47,7 +47,7 @@ function Experience() {
   return (
     <section id="experience" className="experience">
       <div className="experience-inner">
-        <div className="experience-heading">
+        <div className="experience-heading" data-reveal>
           <p className="section-kicker">Experience</p>
           <h2>
             From monitoring to <span>infrastructure ownership.</span>
@@ -60,7 +60,12 @@ function Experience() {
 
         <div className="experience-timeline">
           {roles.map((item, index) => (
-            <article className="experience-item" key={`${item.company}-${item.role}`}>
+            <article
+              className="experience-item"
+              key={`${item.company}-${item.role}`}
+              data-reveal
+              style={{ "--reveal-delay": `${index * 80}ms` }}
+            >
               <div className="experience-marker" aria-hidden="true">
                 <span>0{index + 1}</span>
               </div>

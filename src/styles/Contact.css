@@ -65,6 +65,13 @@
   box-shadow: 0 12px 28px rgba(16, 23, 18, 0.25);
   color: var(--lime);
 }
+.contact-email svg,
+.social-arrow {
+  transition: transform 0.2s ease;
+}
+.contact-email:hover svg {
+  transform: translateX(4px);
+}
 .contact-socials {
   display: grid;
   width: min(1240px, 100%);
@@ -105,6 +112,9 @@
   margin-left: auto;
   color: #778276;
   font-size: 0.95rem;
+}
+.contact-socials a:hover .social-arrow {
+  transform: translate(3px, -3px);
 }
 
 @media (max-width: 700px) {

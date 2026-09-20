@@ -9,6 +9,18 @@
   backdrop-filter: blur(16px);
 }
 
+.header::after {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: var(--scroll-progress, 0%);
+  height: 2px;
+  background: linear-gradient(90deg, var(--lime), #8adfe9);
+  box-shadow: 0 0 12px rgba(213, 251, 89, 0.38);
+  content: "";
+  transition: width 0.08s linear;
+}
+
 .header-inner {
   display: flex;
   width: min(1240px, 100%);
@@ -35,6 +47,35 @@
   width: 34px;
   height: 34px;
   flex: 0 0 34px;
+  overflow: visible;
+  filter: drop-shadow(0 0 0 rgba(213, 251, 89, 0));
+  transition: transform 0.2s ease;
+  animation: brand-mark-pulse 0.95s ease-out 0.42s both;
+}
+.brand:hover .brand-mark {
+  transform: scale(1.045);
+}
+.brand-mark-frame,
+.brand-mark-prompt,
+.brand-mark-cursor {
+  stroke-dashoffset: var(--mark-length);
+  stroke-dasharray: var(--mark-length);
+  animation: brand-mark-draw 0.62s ease-out var(--mark-delay) both;
+}
+.brand-mark-frame {
+  --mark-delay: 0.04s;
+  --mark-length: 190;
+}
+.brand-mark-prompt {
+  --mark-delay: 0.2s;
+  --mark-length: 42;
+}
+.brand-mark-cursor {
+  --mark-delay: 0.48s;
+  --mark-length: 16;
+  animation:
+    brand-mark-draw 0.24s ease-out var(--mark-delay) both,
+    brand-cursor-flash 0.18s steps(1, end) 0.74s 4;
 }
 .nav {
   display: flex;
@@ -106,9 +147,36 @@
 }
 .nav-contact span {
   font-size: 1.1rem;
+  transition: transform 0.2s ease;
+}
+.nav-contact:hover span {
+  transform: translate(3px, -3px);
 }
 .menu-toggle {
   display: none;
+}
+
+@keyframes brand-mark-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes brand-mark-pulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0 rgba(213, 251, 89, 0));
+  }
+
+  55% {
+    filter: drop-shadow(0 0 8px rgba(213, 251, 89, 0.72));
+  }
+}
+
+@keyframes brand-cursor-flash {
+  50% {
+    opacity: 0.15;
+  }
 }
 
 @media (max-width: 820px) {

@@ -98,7 +98,7 @@ const skillsGroups = [
 function Skills() {
   return (
     <section id="skills" className="skills-section">
-      <div className="section-heading">
+      <div className="section-heading" data-reveal>
         <p className="section-kicker">What I work with</p>
         <h2>
           The tools behind <span>reliable systems.</span>
@@ -110,7 +110,12 @@ function Skills() {
       </div>
       <div className="skills-groups-container">
         {skillsGroups.map((group, gIndex) => (
-          <article key={gIndex} className="skills-group">
+          <article
+            key={gIndex}
+            className="skills-group"
+            data-reveal
+            style={{ "--reveal-delay": `${(gIndex % 3) * 80}ms` }}
+          >
             <h3>
               <span className="group-index">0{gIndex + 1}</span>
               {group.title}

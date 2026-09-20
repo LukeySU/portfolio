@@ -7,8 +7,16 @@ function Hero() {
   return (
     <section className="hero" id="home">
       <div className="hero-glow" aria-hidden="true" />
+      <div className="hero-signal" aria-hidden="true">
+        <span />
+      </div>
       <div className="hero-content">
         <div className="hero-text">
+          <div className="hero-boot" aria-hidden="true">
+            <span className="hero-boot-prompt">&gt;</span>
+            <span className="hero-boot-command">deploy --reliable</span>
+            <span className="hero-boot-status">ready</span>
+          </div>
           <p className="eyebrow">
             <span className="status-dot" /> Infrastructure engineer{" "}
             <span className="eyebrow-divider">/</span> Cloud &amp; reliability

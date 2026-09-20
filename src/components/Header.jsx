@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import BrandMark from "./BrandMark";
 import "../styles/Header.css";
 
 const links = [
@@ -54,7 +55,7 @@ function Header() {
           onClick={closeMenu}
           aria-label="Łukasz Sulowski home"
         >
-          <img className="brand-mark" src="/ls-mark.svg" alt="" />
+          <BrandMark />
           <span className="brand-name">Łukasz Sulowski</span>
         </a>
 

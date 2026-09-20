@@ -5,7 +5,7 @@ import "../styles/Contact.css";
 function Contact() {
   return (
     <section id="contact" className="contact">
-      <div className="contact-panel">
+      <div className="contact-panel" data-reveal>
         <div className="contact-copy">
           <p className="section-kicker">Open to new opportunities</p>
           <h2>
@@ -20,7 +20,12 @@ function Contact() {
           Let’s connect <FaArrowRight aria-hidden="true" />
         </a>
       </div>
-      <div className="contact-socials" aria-label="Social profiles">
+      <div
+        className="contact-socials"
+        aria-label="Social profiles"
+        data-reveal
+        style={{ "--reveal-delay": "100ms" }}
+      >
         <a
           href="https://www.linkedin.com/in/lukaszsulowski"
           target="_blank"

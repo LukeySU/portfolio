@@ -42,16 +42,40 @@
   margin: 0 auto;
 }
 .project-card {
+  --card-lift: 0px;
+  --card-rotate-x: 0deg;
+  --card-rotate-y: 0deg;
+  position: relative;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 9px;
   background: rgba(29, 42, 33, 0.91);
+  transform: perspective(1100px) rotateX(var(--card-rotate-x))
+    rotateY(var(--card-rotate-y)) translateY(var(--card-lift));
+  transform-style: preserve-3d;
   transition:
-    transform 0.25s ease,
+    transform 0.2s cubic-bezier(0.2, 0.72, 0.24, 1),
     border-color 0.25s ease;
 }
+.project-card::before {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: radial-gradient(
+    420px circle at var(--card-glow-x, 50%) var(--card-glow-y, 50%),
+    rgba(213, 251, 89, 0.11),
+    transparent 64%
+  );
+  content: "";
+  opacity: 0;
+  transition: opacity 0.22s ease;
+  pointer-events: none;
+}
+.project-card.is-pointer-active::before {
+  opacity: 1;
+}
 .project-card:hover {
-  transform: translateY(-5px);
+  --card-lift: -5px;
   border-color: rgba(213, 251, 89, 0.48);
 }
 .project-card.featured {
@@ -126,6 +150,14 @@
   border-radius: 50%;
   background: rgba(16, 23, 18, 0.78);
   color: var(--lime);
+}
+.project-arrow svg,
+.project-link svg {
+  transition: transform 0.2s ease;
+}
+.project-card:hover .project-arrow svg,
+.project-link:hover svg {
+  transform: translate(3px, -3px);
 }
 .project-copy {
   padding: 26px 27px 28px;
@@ -223,5 +255,18 @@
   }
   .project-description {
     min-height: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .project-card:hover {
+    --card-lift: 0px;
+    --card-rotate-x: 0deg;
+    --card-rotate-y: 0deg;
+  }
+
+  .project-card::before {
+    display: none;
   }
 }

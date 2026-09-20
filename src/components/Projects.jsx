@@ -51,7 +51,7 @@ const projects = [
 function Projects() {
   return (
     <section id="projects" className="projects">
-      <div className="projects-heading">
+      <div className="projects-heading" data-reveal>
         <div>
           <p className="section-kicker">Selected work</p>
           <h2>
@@ -64,10 +64,12 @@ function Projects() {
         </p>
       </div>
       <div className="projects-grid">
-        {projects.map((project) => (
+        {projects.map((project, index) => (
           <article
             key={project.number}
             className={`project-card ${project.featured ? "featured" : ""}`}
+            data-reveal
+            style={{ "--reveal-delay": `${index * 80}ms` }}
           >
             <a
               className="project-visual"

@@ -30,3 +30,37 @@
 main {
   display: block;
 }
+
+[data-reveal] {
+  opacity: 0;
+  translate: 0 24px;
+}
+
+[data-reveal].is-visible {
+  animation-name: reveal-up;
+  animation-duration: 0.65s;
+  animation-timing-function: cubic-bezier(0.2, 0.72, 0.24, 1);
+  animation-delay: var(--reveal-delay, 0ms);
+  animation-fill-mode: both;
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    translate: 0 24px;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal],
+  [data-reveal].is-visible {
+    opacity: 1;
+    translate: none;
+    animation: none !important;
+  }
+}
