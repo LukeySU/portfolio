@@ -205,11 +205,17 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  margin-top: 23px;
+  margin-top: 0;
   color: var(--lime);
   font-size: 0.82rem;
   font-weight: 700;
   text-decoration: none;
+}
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  margin-top: 23px;
 }
 .project-link:hover {
   color: #e4ff94;

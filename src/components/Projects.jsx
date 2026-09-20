@@ -1,4 +1,5 @@
 import React from "react";
+import { FaArrowDown } from "react-icons/fa";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import portoImg from "../assets/portfolio-current.jpg";
 import appImg from "../assets/weather-app-preview.jpg";
@@ -19,6 +20,7 @@ const projects = [
     imageHeight: 760,
     imageAlt: "Architecture of the Kubernetes reliability lab",
     featured: true,
+    caseStudy: "/case-study/kubernetes-reliability-lab",
   },
   {
     number: "02",
@@ -106,15 +108,22 @@ function Projects() {
                   <span key={tag}>{tag}</span>
                 ))}
               </div>
-              <a
-                className="project-link"
-                href={project.link || "#contact"}
-                target={project.link ? "_blank" : undefined}
-                rel={project.link ? "noreferrer" : undefined}
-              >
-                {project.link ? "View source" : "Ask about this project"}{" "}
-                <FaArrowUpRightFromSquare aria-hidden="true" />
-              </a>
+              <div className="project-actions">
+                <a
+                  className="project-link"
+                  href={project.link || "#contact"}
+                  target={project.link ? "_blank" : undefined}
+                  rel={project.link ? "noreferrer" : undefined}
+                >
+                  {project.link ? "View source" : "Ask about this project"}{" "}
+                  <FaArrowUpRightFromSquare aria-hidden="true" />
+                </a>
+                {project.caseStudy && (
+                  <a className="project-link" href={project.caseStudy}>
+                    View case study <FaArrowDown aria-hidden="true" />
+                  </a>
+                )}
+              </div>
             </div>
           </article>
         ))}
