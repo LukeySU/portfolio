@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" width="1000" height="470" role="img" aria-labelledby="title desc">
+  <title id="title">Portfolio architecture</title>
+  <desc id="desc">Delivery: a push to main runs the GitHub Actions CI workflow (lint, test, build, deploy) which deploys to Netlify, serving lukaszsulowski.eu. Monitoring: a scheduled uptime workflow probes /health every 10 minutes and reports check-ins to a Sentry cron monitor; a Sentry uptime monitor also probes /health; Sentry raises alerts.</desc>
+  <defs>
+    <marker id="arrow-lime" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#d5fb59"/>
+    </marker>
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#51c4e8"/>
+    </marker>
+    <style>
+      .bg { fill: #101712; }
+      .lane { font: 600 12px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: .12em; }
+      .node { fill: #141e17; stroke: rgba(213, 251, 89, .35); stroke-width: 1; }
+      .node-site { fill: #1b2a14; stroke: #d5fb59; stroke-width: 1.5; }
+      .node-mon { fill: #121b1f; stroke: rgba(81, 196, 232, .45); stroke-width: 1; }
+      .t { font: 600 14px "Segoe UI", Helvetica, Arial, sans-serif; fill: #f4f4ec; }
+      .s { font: 11.5px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #aeb8ad; }
+      .edge-lime { stroke: #d5fb59; stroke-width: 1.6; fill: none; }
+      .edge-cyan { stroke: #51c4e8; stroke-width: 1.6; fill: none; stroke-dasharray: 6 5; }
+      .lbl { font: 11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1000" height="470" rx="14"/>
+
+  <!-- Delivery lane -->
+  <text class="lane" x="32" y="44" fill="#d5fb59">&gt; DELIVERY</text>
+
+  <rect class="node" x="32" y="70" width="130" height="80" rx="8"/>
+  <text class="t" x="97" y="105" text-anchor="middle">Developer</text>
+  <text class="s" x="97" y="126" text-anchor="middle">git push main</text>
+
+  <rect class="node" x="196" y="70" width="150" height="80" rx="8"/>
+  <text class="t" x="271" y="105" text-anchor="middle">GitHub</text>
+  <text class="s" x="271" y="126" text-anchor="middle">LukeySU/portfolio</text>
+
+  <rect class="node" x="380" y="70" width="200" height="80" rx="8"/>
+  <text class="t" x="480" y="100" text-anchor="middle">GitHub Actions</text>
+  <text class="s" x="480" y="120" text-anchor="middle">ci.yml</text>
+  <text class="s" x="480" y="138" text-anchor="middle">lint · test · build · deploy</text>
+
+  <rect class="node" x="614" y="70" width="160" height="80" rx="8"/>
+  <text class="t" x="694" y="100" text-anchor="middle">Netlify</text>
+  <text class="s" x="694" y="120" text-anchor="middle">CDN · redirects</text>
+  <text class="s" x="694" y="138" text-anchor="middle">security headers</text>
+
+  <rect class="node-site" x="808" y="70" width="160" height="80" rx="8"/>
+  <text class="t" x="888" y="100" text-anchor="middle">lukaszsulowski.eu</text>
+  <text class="s" x="888" y="120" text-anchor="middle">React 19 + Vite</text>
+  <text class="s" x="888" y="138" text-anchor="middle">/health → 200 ok</text>
+
+  <path class="edge-lime" d="M162 110 H194" marker-end="url(#arrow-lime)"/>
+  <path class="edge-lime" d="M346 110 H378" marker-end="url(#arrow-lime)"/>
+  <path class="edge-lime" d="M580 110 H612" marker-end="url(#arrow-lime)"/>
+  <path class="edge-lime" d="M774 110 H806" marker-end="url(#arrow-lime)"/>
+
+  <!-- Monitoring lane -->
+  <text class="lane" x="32" y="304" fill="#51c4e8">&gt; MONITORING</text>
+
+  <rect class="node-mon" x="380" y="330" width="200" height="90" rx="8"/>
+  <text class="t" x="480" y="362" text-anchor="middle">GitHub Actions</text>
+  <text class="s" x="480" y="382" text-anchor="middle">uptime.yml · every 10 min</text>
+  <text class="s" x="480" y="400" text-anchor="middle">probe · retry ×3</text>
+
+  <rect class="node-mon" x="650" y="330" width="150" height="90" rx="8"/>
+  <text class="t" x="725" y="362" text-anchor="middle">Sentry</text>
+  <text class="s" x="725" y="382" text-anchor="middle">cron monitor</text>
+  <text class="s" x="725" y="400" text-anchor="middle">uptime monitor</text>
+
+  <rect class="node-mon" x="838" y="330" width="130" height="90" rx="8"/>
+  <text class="t" x="903" y="370" text-anchor="middle">Alert</text>
+  <text class="s" x="903" y="390" text-anchor="middle">notification</text>
+
+  <!-- synthetic probe: uptime.yml -> site -->
+  <path class="edge-cyan" d="M480 330 V214 H858 V152" marker-end="url(#arrow-cyan)"/>
+  <text class="lbl" x="500" y="206" fill="#51c4e8">GET /health + / (synthetic check)</text>
+
+  <!-- external probe: Sentry uptime -> site -->
+  <path class="edge-cyan" d="M725 330 V252 H928 V152" marker-end="url(#arrow-cyan)"/>
+  <text class="lbl" x="745" y="244" fill="#51c4e8">GET /health (uptime)</text>
+
+  <!-- check-in and alerting -->
+  <path class="edge-cyan" d="M580 375 H648" marker-end="url(#arrow-cyan)"/>
+  <text class="lbl" x="614" y="366" text-anchor="middle" fill="#aeb8ad">check-in</text>
+  <path class="edge-cyan" d="M800 375 H836" marker-end="url(#arrow-cyan)"/>
+
+  <text class="s" x="32" y="452" fill="#7f8b7e">Solid: deploy path · Dashed: monitoring and alerting</text>
+</svg>
