@@ -1,9 +1,27 @@
 import React from "react";
-import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaCheck, FaEnvelope, FaGithub, FaLinkedin, FaRegCopy } from "react-icons/fa";
 import TermLink from "./TermLink";
 import "../styles/Contact.css";
 
+const EMAIL = "lukasz.sulowski@outlook.pl";
+
 function Contact() {
+  const [copied, setCopied] = React.useState(false);
+  const resetTimer = React.useRef();
+
+  React.useEffect(() => () => window.clearTimeout(resetTimer.current), []);
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(EMAIL);
+      setCopied(true);
+      window.clearTimeout(resetTimer.current);
+      resetTimer.current = window.setTimeout(() => setCopied(false), 2000);
+    } catch {
+      window.location.href = `mailto:${EMAIL}`;
+    }
+  };
+
   return (
     <section id="contact" className="contact">
       <div className="contact-panel" data-reveal>
@@ -20,13 +38,15 @@ function Contact() {
             <span aria-hidden="true" /> Based in Poland · Open to remote &amp; hybrid
           </p>
         </div>
-        <TermLink
-          variant="ink"
-          className="contact-email"
-          href="mailto:lukasz.sulowski@outlook.pl"
-        >
-          Let’s connect
-        </TermLink>
+        <div className="contact-actions">
+          <TermLink variant="ink" className="contact-email" href={`mailto:${EMAIL}`}>
+            Let’s connect
+          </TermLink>
+          <button type="button" className="contact-copy-email" onClick={copyEmail}>
+            <span aria-live="polite">{copied ? "Copied to clipboard" : EMAIL}</span>
+            {copied ? <FaCheck aria-hidden="true" /> : <FaRegCopy aria-hidden="true" />}
+          </button>
+        </div>
       </div>
       <div
         className="contact-socials"
@@ -52,7 +72,7 @@ function Contact() {
             ↗
           </span>
         </a>
-        <a href="mailto:lukasz.sulowski@outlook.pl">
+        <a href={`mailto:${EMAIL}`}>
           <FaEnvelope aria-hidden="true" />
           <span>Email</span>
           <span className="social-arrow" aria-hidden="true">

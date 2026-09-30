@@ -1,0 +1,117 @@
+.not-found {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  padding: 24px 7vw 48px;
+  background:
+    radial-gradient(760px 650px at -8% 42%, rgba(213, 251, 89, 0.13), transparent 70%),
+    #101712;
+  color: var(--paper);
+}
+
+.not-found-brand {
+  align-self: flex-start;
+}
+
+.not-found-main {
+  display: flex;
+  width: min(640px, 100%);
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
+  margin: 0 auto;
+  padding: 48px 0;
+}
+
+.not-found-window {
+  overflow: hidden;
+  border: 1px solid rgba(213, 251, 89, 0.35);
+  border-radius: 8px;
+  background: #0c120e;
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.35),
+    0 0 0 6px rgba(213, 251, 89, 0.04);
+}
+
+.not-found-bar {
+  display: flex;
+  height: 34px;
+  align-items: center;
+  gap: 7px;
+  padding: 0 12px;
+  border-bottom: 1px solid var(--line);
+  background: #141e17;
+}
+
+.not-found-bar i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #2c3a30;
+}
+
+.not-found-bar i:first-child {
+  background: #ee995a;
+}
+
+.not-found-bar span {
+  margin: 0 auto;
+  padding-right: 36px;
+  color: var(--text-subtle);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.68rem;
+}
+
+.not-found-output {
+  display: grid;
+  gap: 6px;
+  padding: 20px 22px 22px;
+  color: var(--text-soft);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.84rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.not-found-output p {
+  margin: 0;
+}
+
+.not-found-prompt {
+  margin-right: 8px;
+  color: var(--lime);
+}
+
+.not-found-output .not-found-error {
+  color: #ffad6e;
+}
+
+.not-found-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  background: var(--lime);
+  vertical-align: -2px;
+  animation: term-blink 1s steps(1) infinite;
+}
+
+.not-found h1 {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-weight: 600;
+  letter-spacing: -0.06em;
+  line-height: 1.05;
+}
+
+.not-found h1 span {
+  display: block;
+  color: var(--lime);
+}
+
+.not-found-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}

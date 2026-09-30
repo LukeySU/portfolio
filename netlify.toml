@@ -10,6 +10,28 @@
   package = "@netlify/plugin-functions-install-core"
 
 [[redirects]]
-  from = "/*"
+  from = "/case-study/kubernetes-reliability-lab"
   to = "/index.html"
   status = 200
+
+# Unknown paths still load the app (it renders a terminal-style 404), but with a real 404 status.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # The sha256 hash allows only the inline onload handler that swaps the Google Fonts preload into a stylesheet.
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-hashes' 'sha256-8Fc54x5hKLl6tC2YCXaUueZU4TteO/unGg/8pn/NTUY='; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()"
+    Cross-Origin-Opener-Policy = "same-origin"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

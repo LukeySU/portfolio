@@ -8,6 +8,8 @@ import CaseStudy from "./components/CaseStudy";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import NotFound from "./components/NotFound";
+import Terminal from "./components/Terminal";
 import useInteractiveMotion from "./hooks/useInteractiveMotion";
 import useRevealOnScroll from "./hooks/useRevealOnScroll";
 import "./App.css";
@@ -40,6 +42,10 @@ function App() {
     return <CaseStudy />;
   }
 
+  if (currentPath !== "/" && currentPath !== "/index.html") {
+    return <NotFound path={currentPath} />;
+  }
+
   return (
     <div className="app">
       <Header />
@@ -52,6 +58,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <Terminal />
     </div>
   );
 }
