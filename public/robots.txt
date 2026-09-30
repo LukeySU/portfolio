@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.lukaszsulowski.pl/sitemap.xml
+Sitemap: https://lukaszsulowski.eu/sitemap.xml

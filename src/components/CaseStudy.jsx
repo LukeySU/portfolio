@@ -33,7 +33,7 @@ function CaseStudy() {
     document.title = "Kubernetes Reliability Lab — Case Study | Łukasz Sulowski";
     canonical?.setAttribute(
       "href",
-      "https://www.lukaszsulowski.pl/case-study/kubernetes-reliability-lab",
+      "https://lukaszsulowski.eu/case-study/kubernetes-reliability-lab",
     );
 
     return () => {
