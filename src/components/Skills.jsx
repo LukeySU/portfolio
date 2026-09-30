@@ -1,135 +1,60 @@
 import React from "react";
-import {
-  FaDocker,
-  FaPython,
-  FaJs,
-  FaHtml5,
-  FaCss3Alt,
-  FaReact,
-  FaAws,
-  FaLinux,
-  FaCode,
-  FaServer,
-  FaTools,
-  FaNetworkWired,
-  FaShieldAlt,
-  FaBell,
-  FaChartLine,
-  FaTerminal,
-  FaWindows,
-  FaCloud,
-} from "react-icons/fa";
 import "../styles/Skills.css";
 
 const skillsGroups = [
   {
     title: "Virtualization & Backup",
-    skills: [
-      { name: "VMware vSphere", icon: <FaServer /> },
-      { name: "vCenter", icon: <FaServer /> },
-      { name: "ESXi", icon: <FaServer /> },
-      { name: "Proxmox VE", icon: <FaServer /> },
-      { name: "Hyper-V", icon: <FaServer /> },
-      { name: "Veeam Backup & Replication", icon: <FaShieldAlt /> },
-    ],
+    skills: ["VMware vSphere", "vCenter", "ESXi", "Proxmox VE", "Hyper-V", "Veeam Backup & Replication"],
   },
   {
     title: "Cloud & Platforms",
-    skills: [
-      { name: "Microsoft Azure", icon: <FaCloud /> },
-      { name: "AWS", icon: <FaAws /> },
-      { name: "IaaS / PaaS", icon: <FaCloud /> },
-      { name: "Azure networking", icon: <FaNetworkWired /> },
-      { name: "Cloud access & security", icon: <FaShieldAlt /> },
-    ],
+    skills: ["Microsoft Azure", "AWS", "IaaS / PaaS", "Azure networking", "Cloud access & security"],
   },
   {
     title: "Systems & Networking",
-    skills: [
-      { name: "Linux: SUSE, Debian", icon: <FaLinux /> },
-      { name: "Windows Server", icon: <FaWindows /> },
-      { name: "Active Directory", icon: <FaWindows /> },
-      { name: "Group Policy (GPO)", icon: <FaWindows /> },
-      { name: "DNS", icon: <FaNetworkWired /> },
-      { name: "IIS", icon: <FaServer /> },
-      { name: "TCP/IP, VPNs & Firewalls", icon: <FaNetworkWired /> },
-    ],
+    skills: ["Linux: SUSE, Debian", "Windows Server", "Active Directory", "Group Policy (GPO)", "DNS", "IIS", "TCP/IP, VPNs & Firewalls"],
   },
   {
     title: "Automation & Delivery",
-    skills: [
-      { name: "Terraform", icon: <FaCode /> },
-      { name: "Docker", icon: <FaDocker /> },
-      { name: "Ansible", icon: <FaCode /> },
-      { name: "Kubernetes", icon: <FaCode /> },
-      { name: "CI/CD", icon: <FaTools /> },
-      { name: "GitLab CI", icon: <FaTools /> },
-      { name: "Azure DevOps Pipelines", icon: <FaTools /> },
-      { name: "PowerShell", icon: <FaTerminal /> },
-    ],
+    skills: ["Terraform", "Docker", "Ansible", "Kubernetes", "CI/CD", "GitLab CI", "Azure DevOps Pipelines", "PowerShell"],
   },
   {
     title: "Observability & Operations",
-    skills: [
-      { name: "Zabbix", icon: <FaChartLine /> },
-      { name: "Grafana", icon: <FaChartLine /> },
-      { name: "LibreNMS", icon: <FaChartLine /> },
-      { name: "Datadog", icon: <FaChartLine /> },
-      { name: "Alerting & incident response", icon: <FaBell /> },
-      { name: "Performance monitoring", icon: <FaChartLine /> },
-    ],
+    skills: ["Zabbix", "Grafana", "LibreNMS", "Datadog", "Alerting & incident response", "Performance monitoring"],
   },
   {
     title: "Development & Scripting",
-    skills: [
-      { name: "React", icon: <FaReact /> },
-      { name: "Next.js", icon: <FaReact /> },
-      { name: "JavaScript", icon: <FaJs /> },
-      { name: "HTML", icon: <FaHtml5 /> },
-      { name: "CSS", icon: <FaCss3Alt /> },
-      { name: "Responsive Design", icon: <FaCode /> },
-      { name: "Python", icon: <FaPython /> },
-      { name: "Bash / Shell scripting", icon: <FaTerminal /> },
-      { name: "SQL", icon: <FaCode /> },
-    ],
+    skills: ["React", "Next.js", "JavaScript", "HTML", "CSS", "Responsive Design", "Python", "Bash / Shell scripting", "SQL"],
   },
 ];
 
 function Skills() {
   return (
     <section id="skills" className="skills-section">
-      <div className="section-heading" data-reveal>
-        <p className="section-kicker">What I work with</p>
-        <h2>
-          The tools behind <span>reliable systems.</span>
-        </h2>
-        <p className="section-intro">
-          Hands-on experience across infrastructure, cloud platforms,
-          automation, observability, and software development.
-        </p>
-      </div>
-      <div className="skills-groups-container">
-        {skillsGroups.map((group, gIndex) => (
-          <article
-            key={gIndex}
-            className="skills-group"
-            data-reveal
-            style={{ "--reveal-delay": `${(gIndex % 3) * 80}ms` }}
-          >
-            <h3>
-              <span className="group-index">0{gIndex + 1}</span>
-              {group.title}
-            </h3>
-            <div className="skills-cards">
-              {group.skills.map((skill, i) => (
-                <div key={i} className="skill-card">
-                  <span className="skill-icon">{skill.icon}</span>
-                  <span className="skill-name">{skill.name}</span>
-                </div>
-              ))}
-            </div>
-          </article>
-        ))}
+      <div className="skills-inner">
+        <div className="section-heading" data-reveal>
+          <p className="section-kicker">
+            <span className="section-index" aria-hidden="true">04 /</span> What I work with
+          </p>
+          <h2>The tools behind <span>reliable systems.</span></h2>
+          <p className="section-intro">
+            Hands-on experience across infrastructure, cloud platforms,
+            automation, observability, and software development.
+          </p>
+        </div>
+        <div className="skills-groups-container">
+          {skillsGroups.map((group, index) => (
+            <article className="skills-group" key={group.title} data-reveal>
+              <h3>
+                <span className="group-index" aria-hidden="true">0{index + 1}</span>
+                {group.title}
+              </h3>
+              <ul className="skills-list" aria-label={group.title}>
+                {group.skills.map((skill) => <li className="tech-chip" key={skill}>{skill}</li>)}
+              </ul>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

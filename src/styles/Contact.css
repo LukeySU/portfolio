@@ -32,45 +32,41 @@
 .contact-copy h2 span {
   color: #58681f;
 }
-.contact-copy > p:last-child {
+.contact-copy h2 + p {
   max-width: 500px;
   margin: 18px 0 0;
   color: #3f4a2c;
   font-size: 0.98rem;
   line-height: 1.65;
 }
-.contact-email {
-  display: inline-flex;
-  min-width: 160px;
-  min-height: 52px;
+.contact-copy .contact-availability {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 0 18px;
-  border: 1px solid var(--ink);
-  border-radius: 5px;
+  gap: 9px;
+  margin: 22px 0 0;
   color: var(--ink);
-  font-size: 0.88rem;
-  font-weight: 700;
-  text-decoration: none;
-  transition:
-    background 0.2s ease,
-    box-shadow 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.76rem;
 }
-.contact-email:hover {
-  transform: translateY(-3px);
+.contact-availability span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
   background: var(--ink);
-  box-shadow: 0 12px 28px rgba(16, 23, 18, 0.25);
-  color: var(--lime);
+  box-shadow: 0 0 0 3px rgba(16, 23, 18, 0.15);
 }
-.contact-email svg,
+.contact-panel .contact-email {
+  flex-shrink: 0;
+  min-width: 200px;
+  min-height: 60px;
+  padding: 0 28px;
+  font-size: 0.92rem;
+}
 .social-arrow {
   transition: transform 0.2s ease;
 }
-.contact-email:hover svg {
-  transform: translateX(4px);
+.contact-panel :focus-visible {
+  outline-color: var(--ink);
 }
 .contact-socials {
   display: grid;
@@ -88,7 +84,7 @@
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 6px;
   background: rgba(255, 255, 255, 0.035);
-  color: #d5dcd1;
+  color: var(--text-soft);
   font-size: 0.88rem;
   font-weight: 600;
   text-decoration: none;
@@ -110,7 +106,7 @@
 }
 .social-arrow {
   margin-left: auto;
-  color: #778276;
+  color: var(--text-subtle);
   font-size: 0.95rem;
 }
 .contact-socials a:hover .social-arrow {

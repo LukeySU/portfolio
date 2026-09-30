@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import BrandMark from "./BrandMark";
+import TermLink from "./TermLink";
 import "../styles/Header.css";
 
 const links = [
   { href: "#about", label: "About" },
-  { href: "#experience", label: "Experience" },
-  { href: "#skills", label: "Expertise" },
   { href: "#projects", label: "Projects" },
+  { href: "#experience", label: "Experience" },
+  { href: "#skills", label: "Skills" },
 ];
 
 function Header() {
@@ -91,14 +92,16 @@ function Header() {
               {link.label}
             </a>
           ))}
-          <a
+          <TermLink
+            variant="primary"
+            size="small"
             className={`nav-contact ${activeSection === "contact" ? "active" : ""}`}
             href="#contact"
             onClick={closeMenu}
             aria-current={activeSection === "contact" ? "location" : undefined}
           >
-            Let’s connect <span aria-hidden="true">↗</span>
-          </a>
+            Let’s connect
+          </TermLink>
         </nav>
       </div>
     </header>

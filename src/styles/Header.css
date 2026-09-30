@@ -23,12 +23,12 @@
 
 .header-inner {
   display: flex;
-  width: min(1240px, 100%);
+  width: min(1240px, 86%);
   min-height: 72px;
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
-  padding: 0 7vw;
+  padding: 0;
 }
 
 .brand {
@@ -83,9 +83,9 @@
   gap: clamp(20px, 3vw, 40px);
 }
 .nav a {
-  color: #ffffff !important;
+  color: var(--text-soft) !important;
   font-size: 0.87rem;
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
   transition:
     color 0.2s ease,
@@ -100,57 +100,56 @@
 .nav a:not(.nav-contact) {
   position: relative;
 }
+.nav a:not(.nav-contact)::before,
 .nav a:not(.nav-contact)::after {
   position: absolute;
-  right: 0;
-  bottom: -8px;
-  left: 0;
-  height: 2px;
-  border-radius: 2px;
-  background: var(--lime);
-  content: "";
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.2s ease;
+  top: 50%;
+  color: var(--lime);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+.nav a:not(.nav-contact)::before {
+  right: calc(100% + 6px);
+  content: "[";
+  transform: translate(6px, -50%);
+}
+.nav a:not(.nav-contact)::after {
+  left: calc(100% + 6px);
+  content: "]";
+  transform: translate(-6px, -50%);
 }
 .nav a:not(.nav-contact):hover,
+.nav a:not(.nav-contact):focus-visible,
 .nav a:not(.nav-contact).active {
-  color: var(--lime) !important;
-  transform: translateY(-2px);
+  color: var(--paper) !important;
 }
+.nav a:not(.nav-contact):hover::before,
 .nav a:not(.nav-contact):hover::after,
+.nav a:not(.nav-contact):focus-visible::before,
+.nav a:not(.nav-contact):focus-visible::after,
+.nav a:not(.nav-contact).active::before,
 .nav a:not(.nav-contact).active::after {
-  transform: scaleX(1);
-  transform-origin: left;
+  opacity: 1;
+  transform: translate(0, -50%);
+}
+/* Only one link shows brackets at a time: the hovered one wins over the active one. */
+.nav:has(a:not(.nav-contact):hover) a.active:not(:hover)::before,
+.nav:has(a:not(.nav-contact):hover) a.active:not(:hover)::after {
+  opacity: 0;
 }
 .nav .nav-contact {
-  display: inline-flex;
-  min-height: 42px;
-  align-items: center;
-  gap: 12px;
-  padding: 0 17px;
-  border: 1px solid var(--lime);
-  border-radius: 5px;
-  background: var(--lime);
-  color: #101712 !important;
-}
-.nav .nav-contact:hover {
-  transform: translateY(-2px);
-  border-color: var(--lime);
-  background: var(--ink);
-  box-shadow: 0 10px 26px rgba(213, 251, 89, 0.2);
-  color: var(--lime) !important;
+  color: var(--ink) !important;
+  font-size: 0.78rem;
+  font-weight: 500;
 }
 .nav .nav-contact.active {
   border-color: var(--paper);
   box-shadow: 0 0 0 2px rgba(213, 251, 89, 0.18);
-}
-.nav-contact span {
-  font-size: 1.1rem;
-  transition: transform 0.2s ease;
-}
-.nav-contact:hover span {
-  transform: translate(3px, -3px);
 }
 .menu-toggle {
   display: none;
@@ -185,8 +184,8 @@
     width: 100%;
   }
   .header-inner {
+    width: 88%;
     min-height: 64px;
-    padding: 0 6vw;
   }
   .brand {
     gap: 9px;
@@ -241,10 +240,12 @@
     border-bottom: 1px solid transparent;
     background: #111a14;
     opacity: 0;
+    visibility: hidden;
     transition:
       max-height 0.3s ease,
       opacity 0.2s ease,
-      padding 0.3s ease;
+      padding 0.3s ease,
+      visibility 0s 0.3s;
   }
   .nav.show {
     max-height: 340px;
@@ -252,24 +253,23 @@
     padding-bottom: 16px;
     border-color: rgba(255, 255, 255, 0.15);
     opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
   }
   .nav a {
     padding: 13px 2px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
+  .nav a:not(.nav-contact)::before,
   .nav a:not(.nav-contact)::after {
     display: none;
   }
-  .nav a:not(.nav-contact):hover {
-    transform: none;
-    background: rgba(213, 251, 89, 0.08);
-  }
+  .nav a:not(.nav-contact):hover,
   .nav a:not(.nav-contact).active {
-    transform: none;
     background: rgba(213, 251, 89, 0.08);
   }
   .nav .nav-contact {
-    justify-content: space-between;
+    justify-content: flex-start;
     margin-top: 14px;
     padding: 0 14px;
     border: 1px solid var(--lime);

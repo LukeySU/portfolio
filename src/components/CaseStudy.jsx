@@ -1,9 +1,11 @@
 import React from "react";
-import { FaArrowLeft } from "react-icons/fa";
-import { FaCheck, FaArrowUpRightFromSquare } from "react-icons/fa6";
+import { FaCheck } from "react-icons/fa6";
 import BrandMark from "./BrandMark";
-import dashboardHealthy from "../assets/case-study/dashboard-healthy.png";
-import alertFiring from "../assets/case-study/alert-firing.png";
+import TermLink from "./TermLink";
+import dashboardHealthy from "../assets/case-study/dashboard-healthy.webp";
+import dashboardHealthySmall from "../assets/case-study/dashboard-healthy-720.webp";
+import alertFiring from "../assets/case-study/alert-firing.webp";
+import alertFiringSmall from "../assets/case-study/alert-firing-720.webp";
 import "../styles/Header.css";
 import "../styles/CaseStudy.css";
 
@@ -23,6 +25,23 @@ const outcomes = [
 ];
 
 function CaseStudy() {
+  React.useEffect(() => {
+    const canonical = document.querySelector('link[rel="canonical"]');
+    const previousTitle = document.title;
+    const previousHref = canonical?.href;
+
+    document.title = "Kubernetes Reliability Lab — Case Study | Łukasz Sulowski";
+    canonical?.setAttribute(
+      "href",
+      "https://www.lukaszsulowski.pl/case-study/kubernetes-reliability-lab",
+    );
+
+    return () => {
+      document.title = previousTitle;
+      if (previousHref) canonical.setAttribute("href", previousHref);
+    };
+  }, []);
+
   return (
     <div className="case-study-page">
       <header className="header case-study-nav">
@@ -31,9 +50,9 @@ function CaseStudy() {
             <BrandMark />
             <span className="brand-name">Łukasz Sulowski</span>
           </a>
-          <a className="case-study-back" href="/#projects">
-            <FaArrowLeft aria-hidden="true" /> Back to portfolio
-          </a>
+          <TermLink size="small" href="/#projects">
+            Back to portfolio
+          </TermLink>
         </div>
       </header>
 
@@ -43,9 +62,9 @@ function CaseStudy() {
         <header className="case-study-heading" data-reveal>
           <div>
             <p className="section-kicker">Case study 01</p>
-            <h2>
+            <h1>
               Kubernetes <span>Reliability Lab.</span>
-            </h2>
+            </h1>
           </div>
           <p>
             A production-minded environment for testing deployment,
@@ -55,8 +74,8 @@ function CaseStudy() {
 
         <div className="case-study-overview">
           <article className="case-study-card" data-reveal>
-            <p className="case-study-label">01 — Challenge</p>
-            <h3>Production-style testing without cloud cost.</h3>
+            <p className="case-study-label"><span className="section-index" aria-hidden="true">01 /</span> Challenge</p>
+            <h2>Production-style testing without cloud cost.</h2>
             <p>
               I wanted a repeatable way to validate monitoring, alerting, and
               recovery behavior without depending on a paid cloud environment.
@@ -68,8 +87,8 @@ function CaseStudy() {
             data-reveal
             style={{ "--reveal-delay": "80ms" }}
           >
-            <p className="case-study-label">02 — Solution</p>
-            <h3>A small platform with real operational signals.</h3>
+            <p className="case-study-label"><span className="section-index" aria-hidden="true">02 /</span> Solution</p>
+            <h2>A small platform with real operational signals.</h2>
             <p>
               A kind cluster runs two application replicas deployed with Helm,
               while the monitoring stack discovers targets and evaluates
@@ -77,10 +96,14 @@ function CaseStudy() {
             </p>
             <div className="architecture-path" aria-label="Project architecture">
               <div>
-                <span>User</span><i>→</i><span>Service</span><i>→</i><span>2 pods</span>
+                <span className="tech-chip">User</span><i>→</i>
+                <span className="tech-chip">Service</span><i>→</i>
+                <span className="tech-chip">2 pods</span>
               </div>
               <div>
-                <span>Prometheus</span><i>→</i><span>Alertmanager</span><i>+</i><span>Grafana</span>
+                <span className="tech-chip">Prometheus</span><i>→</i>
+                <span className="tech-chip">Alertmanager</span><i>+</i>
+                <span className="tech-chip">Grafana</span>
               </div>
             </div>
           </article>
@@ -89,7 +112,7 @@ function CaseStudy() {
         <div className="failure-drill">
           <div className="case-study-section-heading" data-reveal>
             <p className="case-study-label">Failure drill</p>
-            <h3>From healthy service to verified recovery.</h3>
+            <h2>From healthy service to verified recovery.</h2>
           </div>
           <ol className="failure-flow" data-reveal aria-label="Failure drill lifecycle">
             {failureSteps.map((step) => (
@@ -104,8 +127,8 @@ function CaseStudy() {
 
         <div className="case-study-debug" data-reveal>
           <div className="case-study-debug-copy">
-            <p className="case-study-label">03 — What failed</p>
-            <h3>The first alert rule missed a complete target disappearance.</h3>
+            <p className="case-study-label"><span className="section-index" aria-hidden="true">03 /</span> What failed</p>
+            <h2>The first alert rule missed a complete target disappearance.</h2>
             <p>
               When the service had no targets, Prometheus returned no time
               series instead of a zero value. The rule needed to handle the
@@ -129,13 +152,15 @@ function CaseStudy() {
 
         <div className="case-study-evidence">
           <div className="case-study-section-heading" data-reveal>
-            <p className="case-study-label">04 — Evidence</p>
-            <h3>Observed, triggered, and resolved.</h3>
+            <p className="case-study-label"><span className="section-index" aria-hidden="true">04 /</span> Evidence</p>
+            <h2>Observed, triggered, and resolved.</h2>
           </div>
           <div className="evidence-grid">
             <figure data-reveal>
               <img
                 src={dashboardHealthy}
+                srcSet={`${dashboardHealthySmall} 720w, ${dashboardHealthy} 1440w`}
+                sizes="(max-width: 760px) 88vw, 610px"
                 alt="Grafana dashboard showing two healthy application targets"
                 width="1440"
                 height="960"
@@ -153,6 +178,8 @@ function CaseStudy() {
             >
               <img
                 src={alertFiring}
+                srcSet={`${alertFiringSmall} 720w, ${alertFiring} 1440w`}
+                sizes="(max-width: 760px) 88vw, 610px"
                 alt="Prometheus showing the ReliabilityDemoUnavailable alert firing"
                 width="1440"
                 height="960"
@@ -169,8 +196,8 @@ function CaseStudy() {
 
             <div className="case-study-outcome" data-reveal>
           <div>
-            <p className="case-study-label">05 — Outcome</p>
-            <h3>A repeatable reliability test, not just a running cluster.</h3>
+            <p className="case-study-label"><span className="section-index" aria-hidden="true">05 /</span> Outcome</p>
+            <h2>A repeatable reliability test, not just a running cluster.</h2>
           </div>
           <ul>
             {outcomes.map((outcome) => (
@@ -181,22 +208,23 @@ function CaseStudy() {
             ))}
           </ul>
           <div className="case-study-actions">
-            <a
-              className="case-study-button case-study-button-primary"
+            <TermLink
+              variant="primary"
+              size="small"
               href="https://github.com/LukeySU/kubernetes-reliability-lab"
               target="_blank"
               rel="noreferrer"
             >
-              View source <FaArrowUpRightFromSquare aria-hidden="true" />
-            </a>
-            <a
-              className="case-study-button"
+              View source
+            </TermLink>
+            <TermLink
+              size="small"
               href="https://github.com/LukeySU/kubernetes-reliability-lab/blob/main/docs/runbook.md"
               target="_blank"
               rel="noreferrer"
             >
-              Read runbook <FaArrowUpRightFromSquare aria-hidden="true" />
-            </a>
+              Read runbook
+            </TermLink>
           </div>
             </div>
           </div>

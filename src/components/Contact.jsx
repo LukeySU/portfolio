@@ -1,5 +1,6 @@
 import React from "react";
-import { FaArrowRight, FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import TermLink from "./TermLink";
 import "../styles/Contact.css";
 
 function Contact() {
@@ -7,7 +8,7 @@ function Contact() {
     <section id="contact" className="contact">
       <div className="contact-panel" data-reveal>
         <div className="contact-copy">
-          <p className="section-kicker">Open to new opportunities</p>
+          <p className="section-kicker"><span className="section-index" aria-hidden="true">05 /</span> Open to new opportunities</p>
           <h2>
             Let’s build systems <span>teams can trust.</span>
           </h2>
@@ -15,10 +16,17 @@ function Contact() {
             Looking for an infrastructure engineer focused on automation,
             reliability, and practical operations? Let’s talk.
           </p>
+          <p className="contact-availability">
+            <span aria-hidden="true" /> Based in Poland · Open to remote &amp; hybrid
+          </p>
         </div>
-        <a className="contact-email" href="mailto:lukasz.sulowski@outlook.pl">
-          Let’s connect <FaArrowRight aria-hidden="true" />
-        </a>
+        <TermLink
+          variant="ink"
+          className="contact-email"
+          href="mailto:lukasz.sulowski@outlook.pl"
+        >
+          Let’s connect
+        </TermLink>
       </div>
       <div
         className="contact-socials"

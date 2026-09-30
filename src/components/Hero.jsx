@@ -1,6 +1,7 @@
 import React from "react";
-import { FaArrowDown, FaArrowRight } from "react-icons/fa";
-import MyPhoto from "../assets/lukasz-hero.jpg";
+import { FaArrowDown } from "react-icons/fa";
+import MyPhoto from "../assets/lukasz-hero.webp";
+import TermLink from "./TermLink";
 import "../styles/Hero.css";
 
 function Hero() {
@@ -19,7 +20,8 @@ function Hero() {
           </div>
           <p className="eyebrow">
             <span className="status-dot" /> Infrastructure engineer{" "}
-            <span className="eyebrow-divider">/</span> Cloud &amp; reliability
+            <span className="eyebrow-divider" aria-hidden="true">/</span>{" "}
+            <span className="eyebrow-secondary">Cloud &amp; reliability</span>
           </p>
           <h1>
             Reliable systems.
@@ -31,12 +33,10 @@ function Hero() {
             teams down.
           </p>
           <div className="hero-actions">
-            <a className="button button-primary" href="#experience">
-              View experience <FaArrowRight aria-hidden="true" />
-            </a>
-            <a className="button button-quiet" href="#projects">
-              See projects <FaArrowDown aria-hidden="true" />
-            </a>
+            <TermLink variant="primary" href="#experience">
+              View experience
+            </TermLink>
+            <TermLink href="#projects">See projects</TermLink>
           </div>
           <div className="hero-focus">
             <span>Focused on</span>
@@ -47,21 +47,33 @@ function Hero() {
         </div>
         <div className="hero-visual">
           <div className="hero-portrait-card">
+            <div className="portrait-bar" aria-hidden="true">
+              <i />
+              <i />
+              <i />
+              <span>~/whoami</span>
+            </div>
             <img
               src={MyPhoto}
               alt="Portrait of Łukasz Sulowski"
-              width="720"
-              height="1080"
+              width="640"
+              height="960"
               fetchPriority="high"
             />
             <div className="portrait-caption">
-              <span>Łukasz Sulowski</span>
-              <span>Infrastructure Engineer</span>
+              <p className="portrait-command" aria-hidden="true">
+                <span>&gt;</span> whoami
+              </p>
+              <p className="portrait-name">Łukasz Sulowski</p>
+              <p className="portrait-role">
+                Infrastructure engineer
+                <i className="portrait-cursor" aria-hidden="true" />
+              </p>
             </div>
           </div>
         </div>
       </div>
-      <a className="scroll-cue" href="#about" aria-label="Scroll to about me">
+      <a className="scroll-cue" href="#about">
         <span>Scroll to explore</span>
         <FaArrowDown aria-hidden="true" />
       </a>

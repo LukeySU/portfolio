@@ -1,9 +1,12 @@
 import React from "react";
-import { FaArrowDown } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
-import portoImg from "../assets/portfolio-current.jpg";
-import appImg from "../assets/weather-app-preview.jpg";
+import portoImg from "../assets/portfolio-current.webp";
+import portoImgSmall from "../assets/portfolio-current-700.webp";
+import appImg from "../assets/weather-app-preview.webp";
+import appImgSmall from "../assets/weather-app-preview-700.webp";
 import reliabilityImg from "../assets/reliability-lab.svg";
+import TermLink from "./TermLink";
 import "../styles/Projects.css";
 
 const projects = [
@@ -31,6 +34,7 @@ const projects = [
     tags: ["React", "CI/CD", "Sentry"],
     link: "https://github.com/LukeySU/portfolio",
     image: portoImg,
+    imageSrcSet: `${portoImgSmall} 700w, ${portoImg} 1400w`,
     imageWidth: 1400,
     imageHeight: 760,
     imageAlt: "Screenshot of the portfolio website",
@@ -44,6 +48,7 @@ const projects = [
     tags: ["Python", "Streamlit", "OpenWeatherMap"],
     link: "https://github.com/LukeySU/weather-app-streamlit",
     image: appImg,
+    imageSrcSet: `${appImgSmall} 700w, ${appImg} 1400w`,
     imageWidth: 1400,
     imageHeight: 760,
     imageAlt: "Weather forecast dashboard showing a five-day forecast",
@@ -55,7 +60,7 @@ function Projects() {
     <section id="projects" className="projects">
       <div className="projects-heading" data-reveal>
         <div>
-          <p className="section-kicker">Selected work</p>
+          <p className="section-kicker"><span className="section-index" aria-hidden="true">02 /</span> Selected work</p>
           <h2>
             <span>Useful</span> by design.
           </h2>
@@ -75,17 +80,21 @@ function Projects() {
           >
             <a
               className="project-visual"
-              href={project.link || "#contact"}
-              target={project.link ? "_blank" : undefined}
-              rel={project.link ? "noreferrer" : undefined}
+              href={project.caseStudy || project.link || "#contact"}
+              target={!project.caseStudy && project.link ? "_blank" : undefined}
+              rel={!project.caseStudy && project.link ? "noreferrer" : undefined}
               aria-label={
-                project.link
+                project.caseStudy
+                  ? `Read the ${project.title} case study`
+                  : project.link
                   ? `View ${project.title} on GitHub`
                   : `Contact me about ${project.title}`
               }
             >
               <img
                 src={project.image}
+                srcSet={project.imageSrcSet}
+                sizes={project.imageSrcSet ? "(max-width: 760px) 88vw, 610px" : undefined}
                 alt={project.imageAlt}
                 width={project.imageWidth}
                 height={project.imageHeight}
@@ -93,7 +102,11 @@ function Projects() {
                 decoding="async"
               />
               <span className="project-arrow">
-                <FaArrowUpRightFromSquare aria-hidden="true" />
+                {project.caseStudy ? (
+                  <FaArrowRight aria-hidden="true" />
+                ) : (
+                  <FaArrowUpRightFromSquare aria-hidden="true" />
+                )}
               </span>
             </a>
             <div className="project-copy">
@@ -105,24 +118,23 @@ function Projects() {
               <p className="project-description">{project.description}</p>
               <div className="project-tags" aria-label="Technologies">
                 {project.tags.map((tag) => (
-                  <span key={tag}>{tag}</span>
+                  <span className="tech-chip" key={tag}>{tag}</span>
                 ))}
               </div>
               <div className="project-actions">
-                <a
-                  className="project-link"
+                {project.caseStudy && (
+                  <TermLink variant="primary" size="small" href={project.caseStudy}>
+                    View case study
+                  </TermLink>
+                )}
+                <TermLink
+                  size="small"
                   href={project.link || "#contact"}
                   target={project.link ? "_blank" : undefined}
                   rel={project.link ? "noreferrer" : undefined}
                 >
-                  {project.link ? "View source" : "Ask about this project"}{" "}
-                  <FaArrowUpRightFromSquare aria-hidden="true" />
-                </a>
-                {project.caseStudy && (
-                  <a className="project-link" href={project.caseStudy}>
-                    View case study <FaArrowDown aria-hidden="true" />
-                  </a>
-                )}
+                  {project.link ? "View source" : "Ask about this project"}
+                </TermLink>
               </div>
             </div>
           </article>

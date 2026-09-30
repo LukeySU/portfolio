@@ -7,20 +7,28 @@ const roles = [
     role: "Infrastructure Engineer",
     company: "Stock Spirits Group",
     description:
-      "I administer hybrid infrastructure across VMware, Linux, Windows Server, and Microsoft Azure, with a focus on dependable day-to-day operations.",
+      "Now responsible for the day-to-day reliability of a hybrid on-premises and Azure environment.",
     highlights: [
-      "Developing infrastructure and operational automation with Terraform, PowerShell, and Python.",
-      "Maintaining CI/CD workflows in GitLab CI and Azure DevOps Pipelines.",
-      "Supporting monitoring, backups, upgrades, and core services including Active Directory, DNS, and IIS.",
+      "Develop infrastructure and operational automation with Terraform, PowerShell, and Python.",
+      "Maintain CI/CD workflows in GitLab CI and Azure DevOps Pipelines.",
+      "Support monitoring, backups, upgrades, and core services including Active Directory, DNS, and IIS.",
     ],
-    technologies: ["VMware", "Azure", "Linux", "Terraform", "GitLab CI"],
+    technologies: [
+      "VMware",
+      "Azure",
+      "Windows Server",
+      "Linux",
+      "Terraform",
+      "PowerShell",
+      "GitLab CI",
+    ],
   },
   {
     period: "Oct 2022 — Feb 2026",
     role: "Associate Infrastructure Engineer",
     company: "Capgemini Poland",
     description:
-      "I worked across cloud and on-premises environments, combining systems administration, observability, and automation.",
+      "Promoted from monitoring into engineering, working hands-on across cloud and on-premises systems.",
     highlights: [
       "Automated provisioning and maintenance with Python, Bash, Terraform, Ansible, and CI/CD pipelines.",
       "Maintained monitoring and alerting for AWS, Google Cloud, and on-premises systems.",
@@ -33,13 +41,12 @@ const roles = [
     role: "Infrastructure Monitoring Analyst",
     company: "Capgemini Poland",
     description:
-      "I supported critical infrastructure and cloud services in a 24/7 operations environment.",
+      "Where it started: supporting critical infrastructure and cloud services in a 24/7 operations team.",
     highlights: [
       "Investigated and escalated infrastructure incidents.",
       "Tracked data transfers and prepared performance reports.",
       "Maintained incident records and operational documentation.",
     ],
-    technologies: ["Monitoring", "Incident response", "Operations"],
   },
 ];
 
@@ -48,7 +55,7 @@ function Experience() {
     <section id="experience" className="experience">
       <div className="experience-inner">
         <div className="experience-heading" data-reveal>
-          <p className="section-kicker">Experience</p>
+          <p className="section-kicker"><span className="section-index" aria-hidden="true">03 /</span> Experience</p>
           <h2>
             From monitoring to <span>infrastructure ownership.</span>
           </h2>
@@ -82,11 +89,13 @@ function Experience() {
                       <li key={highlight}>{highlight}</li>
                     ))}
                   </ul>
-                  <div className="experience-technologies" aria-label="Technologies">
-                    {item.technologies.map((technology) => (
-                      <span key={technology}>{technology}</span>
-                    ))}
-                  </div>
+                  {item.technologies && (
+                    <div className="experience-technologies" aria-label="Technologies">
+                      {item.technologies.map((technology) => (
+                        <span className="tech-chip" key={technology}>{technology}</span>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             </article>

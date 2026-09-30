@@ -2,9 +2,18 @@ import React from "react";
 import "../styles/About.css";
 
 const principles = [
-  "Reliability first",
-  "Automation-minded",
-  "Operations-focused",
+  {
+    title: "Reliability first",
+    text: "Stable, observable systems over quick fixes.",
+  },
+  {
+    title: "Automation-minded",
+    text: "Repetitive work becomes code and pipelines.",
+  },
+  {
+    title: "Operations-focused",
+    text: "Built to be run, debugged, and scaled.",
+  },
 ];
 
 function About() {
@@ -12,7 +21,7 @@ function About() {
     <section id="about" className="about">
       <div className="about-inner">
         <div className="about-heading" data-reveal>
-          <p className="section-kicker">About me</p>
+          <p className="section-kicker"><span className="section-index" aria-hidden="true">01 /</span> About me</p>
           <h2>
             Infrastructure with a <span>practical mindset.</span>
           </h2>
@@ -24,22 +33,24 @@ function About() {
           style={{ "--reveal-delay": "100ms" }}
         >
           <p className="about-lead">
-            I’m an infrastructure engineer focused on building and maintaining
-            stable, secure, and observable environments.
+            I started in a 24/7 operations team, watching alerts, chasing
+            incidents, and learning what actually keeps systems running.
           </p>
           <p>
-            I work across virtualization, cloud platforms, automation,
-            monitoring, and CI/CD, with a practical approach to reliability and
-            continuous improvement. I enjoy turning repetitive operational work
-            into repeatable processes and building systems that are easier to
-            operate, troubleshoot, and scale.
+            Today I look after hybrid infrastructure day to day and automate
+            anything I find myself doing twice. I care about the unglamorous
+            parts: clear monitoring, reliable backups, and documented changes,
+            because they make the next incident shorter. I also build small
+            labs, like the Kubernetes Reliability Lab below, to test ideas
+            before they reach production.
           </p>
 
           <ul className="about-principles" aria-label="Engineering principles">
             {principles.map((principle, index) => (
-              <li key={principle}>
+              <li key={principle.title}>
                 <span>0{index + 1}</span>
-                {principle}
+                <strong>{principle.title}</strong>
+                <p>{principle.text}</p>
               </li>
             ))}
           </ul>
