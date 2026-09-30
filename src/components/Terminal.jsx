@@ -27,25 +27,8 @@ const WELCOME = [
   { type: "out", text: "Type `help` to see available commands." },
 ];
 
-const HINT_STORAGE_KEY = "terminal-hint-seen";
 const HINT_DELAY_MS = 12000;
 const HINT_DURATION_MS = 10000;
-
-const readHintSeen = () => {
-  try {
-    return window.localStorage.getItem(HINT_STORAGE_KEY) === "1";
-  } catch {
-    return false;
-  }
-};
-
-const markHintSeen = () => {
-  try {
-    window.localStorage.setItem(HINT_STORAGE_KEY, "1");
-  } catch {
-    // Storage can be unavailable (private mode); the hint then simply shows once per page load.
-  }
-};
 
 const isTypingTarget = (element) =>
   element instanceof HTMLElement &&
@@ -62,10 +45,7 @@ function Terminal() {
   const outputRef = React.useRef(null);
   const returnFocusRef = React.useRef(null);
 
-  const dismissHint = React.useCallback(() => {
-    setShowHint(false);
-    markHintSeen();
-  }, []);
+  const dismissHint = React.useCallback(() => setShowHint(false), []);
 
   const openTerminal = React.useCallback(() => {
     returnFocusRef.current = document.activeElement;
@@ -73,18 +53,17 @@ function Terminal() {
     setOpen(true);
   }, [dismissHint]);
 
-  // One-time "psst" hint: desktop only (the terminal needs a keyboard), shown to visitors who stay a while.
+  // "psst" hint on every page load: desktop only (the terminal needs a keyboard), after the visitor stays a while.
   React.useEffect(() => {
     const hasKeyboardPointer =
       typeof window.matchMedia === "function" &&
       window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-    if (!hasKeyboardPointer || readHintSeen()) return undefined;
+    if (!hasKeyboardPointer) return undefined;
 
     let hideTimer;
     const showTimer = window.setTimeout(() => {
       if (document.visibilityState !== "visible") return;
       setShowHint(true);
-      markHintSeen();
       hideTimer = window.setTimeout(() => setShowHint(false), HINT_DURATION_MS);
     }, HINT_DELAY_MS);
 

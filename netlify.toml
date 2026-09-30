@@ -9,6 +9,12 @@
 [[plugins]]
   package = "@netlify/plugin-functions-install-core"
 
+# Health check for uptime monitoring (must stay above the catch-all 404 rule).
+[[redirects]]
+  from = "/health"
+  to = "/health.json"
+  status = 200
+
 [[redirects]]
   from = "/case-study/kubernetes-reliability-lab"
   to = "/index.html"

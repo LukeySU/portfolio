@@ -1,0 +1,66 @@
+name: Uptime heartbeat
+
+# Synthetic check: probe the live site and report the result to the Sentry cron monitor.
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: uptime-heartbeat
+  cancel-in-progress: false
+
+env:
+  SITE_URL: https://lukaszsulowski.eu
+
+jobs:
+  heartbeat:
+    name: Check site and report to Sentry
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Probe /health and homepage
+        id: probe
+        run: |
+          probe() {
+            # Up to 3 attempts so a single network blip does not page anyone.
+            for attempt in 1 2 3; do
+              code=$(curl -s -o /tmp/body -w '%{http_code}' --max-time 15 "$1" || echo 000)
+              if [ "$code" = "200" ] && { [ -z "$2" ] || grep -q "$2" /tmp/body; }; then
+                echo "OK    $1 ($code, attempt $attempt)"
+                return 0
+              fi
+              echo "retry $1 ($code, attempt $attempt)"
+              sleep 10
+            done
+            echo "FAIL  $1"
+            return 1
+          }
+
+          status=ok
+          probe "$SITE_URL/health" '"status":"ok"' || status=error
+          probe "$SITE_URL/" '' || status=error
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+
+      - name: Report check-in to Sentry
+        if: always()
+        env:
+          SENTRY_HEARTBEAT_URL: ${{ secrets.SENTRY_HEARTBEAT_URL }}
+          STATUS: ${{ steps.probe.outputs.status || 'error' }}
+        run: |
+          if [ -z "$SENTRY_HEARTBEAT_URL" ]; then
+            echo "::error::Missing repository secret SENTRY_HEARTBEAT_URL"
+            exit 1
+          fi
+          # monitor_config upserts the monitor's schedule; the margin absorbs GitHub's delayed scheduled runs.
+          curl -fsS -X POST --max-time 15 "$SENTRY_HEARTBEAT_URL" \
+            -H "Content-Type: application/json" \
+            -d "{\"status\":\"$STATUS\",\"monitor_config\":{\"schedule\":{\"type\":\"crontab\",\"value\":\"*/10 * * * *\"},\"checkin_margin\":20,\"max_runtime\":5,\"timezone\":\"UTC\"}}"
+          echo "Reported status=$STATUS to Sentry"
+
+      - name: Fail the run when the site is down
+        if: steps.probe.outputs.status != 'ok'
+        run: exit 1

@@ -3,7 +3,7 @@
 ## 🧱 Stack
 - **Frontend:** React (hosted on Netlify)  
 - **CI/CD:** GitHub Actions (build, test & deploy pipeline)  
-- **Monitoring:** `/health` endpoint + Shields.io badges  
+- **Monitoring:** `/health` endpoint + scheduled synthetic check (GitHub Actions → Sentry cron monitor)  
 - **Error tracking:** Sentry (runtime monitoring)  
 - **Focus:** Observability • Reliability • Automation
 
@@ -18,13 +18,15 @@
 ## 🩺 Monitoring & Observability
 
 ### 🟢 Uptime
-![Status](https://img.shields.io/badge/status-UP🟢-2ecc71?style=for-the-badge)
-![Uptime](https://img.shields.io/badge/uptime-99.8%25🌍-2ecc71?style=for-the-badge)
+[![Status](https://img.shields.io/website?url=https%3A%2F%2Flukaszsulowski.eu%2Fhealth&label=status&up_message=up&down_message=down&style=for-the-badge)](https://lukaszsulowski.eu/health)
+[![Uptime check](https://img.shields.io/github/actions/workflow/status/LukeySU/portfolio/uptime.yml?branch=main&label=uptime%20check&style=for-the-badge)](https://github.com/LukeySU/portfolio/actions/workflows/uptime.yml)
 
 ### 🧭 Heartbeat Monitoring
-![Sentry](https://img.shields.io/badge/heartbeat-Sentry⚡-7289DA?logo=sentry&style=for-the-badge)
+![Sentry heartbeat](https://img.shields.io/badge/Sentry%20heartbeat-every%2010%20min-7289DA?logo=sentry&style=for-the-badge)
 
-> Runtime alerts and uptime metrics are tracked via **Sentry Heartbeat** and custom `/health` endpoint.  
+> A scheduled GitHub Actions workflow ([`uptime.yml`](./.github/workflows/uptime.yml)) probes [`/health`](https://lukaszsulowski.eu/health) and the homepage every 10 minutes
+> and reports each result as a check-in to a **Sentry cron monitor**, which alerts on failed checks and on missed check-ins.  
+> The badges above are live: *status* is checked by Shields.io on every view, *uptime check* reflects the latest workflow run.  
 > Below: example dashboards from live monitoring.
 
 ![Heartbeat](./docs/heartbeat.png)
